@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    
+
+
+    <style>
+        body {
+            font-family: proxima-nova, Arial;
+        }
+
+        .menu-text {
+            text-decoration: none;
+        }
+
+            .menu-text span {
+                line-height: 130px;
+                font-size: 25px;
+                color: black;
+            }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-around;
+            height: 100px;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+            vertical-align: bottom;
+        }
+
+        .menu-text:hover {
+            font-weight: bolder;
+            
+            border-bottom: 4.5px solid black;
+        }
+
+        .menu:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        .Work-image {
+            width: 100%;
+        }
+
+        .Work-Listing {
+            width: 100%;
+            position: relative;
+        }
+
+
+        .Listing-contents {
+            text-align: left;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #000;
+            visibility: hidden;
+            padding: 50% 0 10% 10%;
+        }
+
+        .Work-Listing span {
+            font-size: 15px;
+            color: white;
+            background-color: rgb(254,138,113);
+            padding: 0 2px 0 2px;
+            margin-right: 10px;
+            margin-bottom: 0px;
+        }
+
+
+        .Work-Listing:hover .Listing-contents {
+            visibility: visible;
+        }
+
+        .Work-Listing:hover .Work-image {
+            opacity: 0.5;
+            filter: saturate(80%);
+            filter: blur(1px);
+        }
+
+
+        .Work-container {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+            -webkit-column-gap: 5px;
+            -moz-column-gap: 5px;
+            column-gap: 5px; /* Specifying Column Gap */
+            margin: 40px 0px 0px 0px;
+        }
+
+        @media (max-width: 1000px) {
+            .Work-container {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .Work-container {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+	<body>
+        <header>
+            <div class="menu-container">
+                <a class="menu-text" href="#work"> <span> work </span> </a>
+                <a href="#home"> <img class="logo" src="images/logodpi.png"> </a>
+                <a class="menu-text" href="#about"> <span> about </span> </a>
+            </div>
+        </header>
+        <div>
+            <h1>Jacob Mitchell</h1>
+        </div>
+        <div class="Work-container">
+            <!-- Portfolio listings content-->
+            <div class="Work-Listing"><a><img class="Work-image" src="images/Solo/final.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+            <div class="Work-Listing"><a><img class="Work-image" src="images/Amun/maincropped.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+
+            <div class="Work-Listing"><a><img class="Work-image" src="images/Cochlea/webreadyzoom.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+            <div class="Work-Listing"><a><img class="Work-image" src="images/Ero/swingsafe.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+
+            <!-- <div class="Work-Listing"><a><img class="Work-image" src="images/Rehapp/report_1.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div> -->
+            <div class="Work-Listing"><a><img class="Work-image" src="images/Goldfinger/table.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+            <div class="Work-Listing"><a><img class="Work-image" src="images/RRP/rrp.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+            <div class="Work-Listing"><a><img class="Work-image" src="images/Fire Bowl/firebowl.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+
+
+        </div>
+
+
+	</body>
+
+
+
+</html>
