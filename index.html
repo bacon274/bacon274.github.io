@@ -12,15 +12,42 @@
             font-family: proxima-nova, Arial;
         }
 
+         header{
+            height: 100vh;
+        }
+        .dynamicHeaderContainer {
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            left: 13%;
+            display: flex;
+            justify-content: left;
+      
+        }
+        #dynamicHeader{
+            height: 30px;
+            font-size: 30px;
+            font-family: proxima nova thin;
+            text-transform:  lowercase; 
+            
+
+        }
+        .underscore{
+            width: 30px;
+            border-bottom: 4.5px solid black;
+
+        }
+
         .menu-text {
             text-decoration: none;
         }
 
-            .menu-text span {
-                line-height: 130px;
-                font-size: 25px;
-                color: black;
-            }
+        .menu-text span {
+            line-height: 130px;
+            font-size: 25px;
+            color: black;
+        }
 
         .menu-container {
             display: flex;
@@ -111,11 +138,7 @@
                 column-count: 1;
             }
         }
-
-        .dynamicHeaderContainer {
-            height: 90vh; 
-            font-size: 50px;
-        }
+       
     </style>
 </head>
 <body>
@@ -125,9 +148,11 @@
             <a href="#home"> <img class="logo" src="images/logodpi.png"> </a>
             <a class="menu-text" href="#about"> <span> about </span> </a>
         </div>
+        <div class="dynamicHeaderContainer"><h1 id="dynamicHeader">Jacob Mitchell.</h1><div class="underscore"></div></div>
+        <script type="text/javascript" src="js/Typewriter.js"></script>
+
     </header>
-    <div class="dynamicHeaderContainer"><h1 id="dynamicHeader">Jacob Mitchell.</h1></div>
-    <script  type="text/javascript" src="js/Typewriter.js"> </script>
+    
     <div class="Work-container">
         <!-- Portfolio listings content-->
         <div class="Work-Listing"><a><img class="Work-image" src="images/Solo/final.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
