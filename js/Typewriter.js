@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function (event) {
-    var dataText = ["Jacob Mitchell", "Design Engineer", "Software Developer"];
+    var dataText = ["Jacob Mitchell", "Design Engineer", "Software Developer", "Creative Prototyper"];
 
     function typeWriter(wordCount, i, callback) { 
         var word = dataText[wordCount];
@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
 
 };
-    typeWriter(2, 0, true);
+    typeWriter(0, 0, true);
     
 });

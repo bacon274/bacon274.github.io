@@ -29,7 +29,9 @@
             height: 25px;
             font-size: 25px;
             font-family: proxima nova thin;
+            font-weight: 100;
             text-transform:  lowercase; 
+            text-decoration: none;
         }
 
         @keyframes blinkAnimation{
@@ -47,6 +49,8 @@
        
         .menu-text {
             text-decoration: none;
+            text-transform:  lowercase; 
+
         }
 
         .menu-text span {
@@ -57,14 +61,17 @@
 
         .menu-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between; 
             height: 100px;
+            margin-left: 12.5%;
+            margin-right: 12.5%;
         }
 
         .logo {
             height: 100px;
             width: auto;
             vertical-align: bottom;
+            
         }
 
         .menu-text:hover {
@@ -80,10 +87,14 @@
 
         .Work-image {
             width: 100%;
+            height: 250px;
+            object-fit: cover;
         }
 
         .Work-Listing {
             width: 100%;
+            
+            
             position: relative;
         }
 
@@ -126,7 +137,7 @@
             -webkit-column-gap: 5px;
             -moz-column-gap: 5px;
             column-gap: 5px; /* Specifying Column Gap */
-            margin: 40px 0px 0px 0px;
+            margin: 40px 12.5% 0px 12.5%;
         }
 
         @media (max-width: 1000px) {
@@ -137,7 +148,7 @@
             }
         }
 
-        @media (max-width: 300px) {
+        @media (max-width: 500px) {
             .Work-container {
                 -webkit-column-count: 1;
                 -moz-column-count: 1;
@@ -151,7 +162,7 @@
     <header>
         <div class="menu-container">
             <a class="menu-text" href="#work"> <span> work </span> </a>
-            <a href="#home"> <img class="logo" src="images/logodpi.png"> </a>
+            <a href="#home" class="menu-text"> <span> Jacob Mitchell <span> <!--<img class="logo" src="images/logodpi.png">--> </a>
             <a class="menu-text" href="#about"> <span> about </span> </a>
         </div>
         <div class="dynamicHeaderContainer"><h1 id="dynamicHeader">Jacob Mitchell.</h1><div class="underscore"></div></div>
