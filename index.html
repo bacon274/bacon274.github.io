@@ -26,19 +26,25 @@
       
         }
         #dynamicHeader{
-            height: 30px;
-            font-size: 30px;
+            height: 40px;
+            font-size: 40px;
             font-family: proxima nova thin;
             text-transform:  lowercase; 
-            
+        }
+
+        @keyframes blinkAnimation{
+            0%{border-bottom: 4.5px solid black;}
+            80%{border-bottom: 4.5px solid black;}
+            100%{border-bottom: 4.5px solid white;}
 
         }
+
         .underscore{
             width: 30px;
             border-bottom: 4.5px solid black;
-
+            animation: blinkAnimation 2000ms infinite normal;
         }
-
+       
         .menu-text {
             text-decoration: none;
         }
