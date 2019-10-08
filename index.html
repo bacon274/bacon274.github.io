@@ -69,7 +69,11 @@
             height: 100px;
             width: auto;
             vertical-align: bottom;
+            display:none;
             
+        }
+        .name{
+
         }
 
         .menu-text:hover {
@@ -152,6 +156,10 @@
                 -moz-column-count: 1;
                 column-count: 1;
             }
+            .name{display: none;}
+            .logo{display: block;
+                  vertical-align: top;
+            }
         }
        
     </style>
@@ -160,7 +168,7 @@
     <header>
         <div class="menu-container">
             <a class="menu-text" href="#work"> <span> work </span> </a>
-            <a href="#home" class="menu-text"> <span> Jacob Mitchell <span> <!--<img class="logo" src="images/logodpi.png">--> </a>
+            <a href="#home" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
             <a class="menu-text" href="#about"> <span> about </span> </a>
         </div>
         <div class="dynamicHeaderContainer"><h1 id="dynamicHeader">Jacob Mitchell.</h1><div class="underscore"></div></div>
