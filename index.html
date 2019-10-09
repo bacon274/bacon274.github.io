@@ -8,6 +8,9 @@
 
 
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         body {
             font-family: proxima-nova, Arial;
         }
@@ -18,9 +21,8 @@
         .dynamicHeaderContainer {
             position: absolute;
             top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            left:12.5%;
+            margin-top: 12.5px;
+            left: 12.5vw;
             display: flex;
             justify-content: left;
       
@@ -86,17 +88,28 @@
             text-decoration: none;
             color: black;
         }
+        .down-Arrow{
+            width: 20px;
+            height: 20px;
+            border: solid black;
+            border-width: 0 1px 1px 0;
+            position: absolute;
+            bottom: 15px; 
+            left: 50%; 
+            margin-left: -10px;
+            -webkit-transform: rotate(45deg);
+            scroll-behavior: smooth;
+
+        }
 
         .Work-image {
             width: 100%;
-            height: 250px;
+            height: 20vw;
             object-fit: cover;
         }
 
         .Work-Listing {
             width: 100%;
-            
-            
             position: relative;
         }
 
@@ -114,7 +127,7 @@
         .Work-Listing span {
             font-size: 15px;
             color: white;
-            background-color: rgb(254,138,113);
+            background-color: black/* rgb(254,138,113)*/;
             padding: 0 2px 0 2px;
             margin-right: 10px;
             margin-bottom: 0px;
@@ -139,6 +152,7 @@
             -webkit-column-gap: 5px;
             -moz-column-gap: 5px;
             column-gap: 5px; /* Specifying Column Gap */
+                  
             margin: 40px 12.5% 0px 12.5%;
         }
 
@@ -147,6 +161,9 @@
                 -webkit-column-count: 2;
                 -moz-column-count: 2;
                 column-count: 2;
+            }
+            .Work-image{
+                height: 30vw;
             }
         }
 
@@ -159,6 +176,9 @@
             .name{display: none;}
             .logo{display: block;
                   vertical-align: top;
+            }
+            .Work-image{
+                height: 70vw;
             }
         }
        
@@ -174,9 +194,11 @@
         <div class="dynamicHeaderContainer"><h1 id="dynamicHeader">Jacob Mitchell.</h1><div class="underscore"></div></div>
         <script type="text/javascript" src="js/Typewriter.js"></script>
 
+        <div > <a class="down-Arrow" href="#work"> </a></div>
+
     </header>
     
-    <div class="Work-container">
+    <div id="work" class="Work-container">
         <!-- Portfolio listings content-->
         <div class="Work-Listing"><a><img class="Work-image" src="images/Solo/final.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
         <div class="Work-Listing"><a><img class="Work-image" src="images/Amun/maincropped.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
