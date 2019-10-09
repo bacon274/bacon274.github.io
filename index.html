@@ -94,12 +94,13 @@
             border: solid black;
             border-width: 0 1px 1px 0;
             position: absolute;
-            bottom: 15px; 
             left: 50%; 
             margin-left: -10px;
+            bottom: 30px;
             -webkit-transform: rotate(45deg);
-            scroll-behavior: smooth;
-
+        }
+        .padding{
+            height: 30px;
         }
 
         .Work-image {
@@ -151,9 +152,9 @@
             column-count: 3;
             -webkit-column-gap: 5px;
             -moz-column-gap: 5px;
-            column-gap: 5px; /* Specifying Column Gap */
-                  
-            margin: 40px 12.5% 0px 12.5%;
+            column-gap: 5px; /* Specifying Column Gap */  
+            margin: 0px 12.5% 0px 12.5%;
+            /*height: 100vh; TO MAke height of one page potentially with side scrolling of projects?*/ 
         }
 
         @media (max-width: 1000px) {
@@ -197,8 +198,8 @@
         <div > <a class="down-Arrow" href="#work"> </a></div>
 
     </header>
-    
-    <div id="work" class="Work-container">
+    <div id="work" class="padding"> </div>
+    <div class="Work-container">
         <!-- Portfolio listings content-->
         <div class="Work-Listing"><a><img class="Work-image" src="images/Solo/final.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
         <div class="Work-Listing"><a><img class="Work-image" src="images/Amun/maincropped.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
@@ -210,6 +211,7 @@
         <div class="Work-Listing"><a><img class="Work-image" src="images/Goldfinger/table.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
         <div class="Work-Listing"><a><img class="Work-image" src="images/RRP/rrp.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
         <div class="Work-Listing"><a><img class="Work-image" src="images/Fire Bowl/firebowl.jpg" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
+        <div class="Work-Listing"><a><img class="Work-image" src="images/Rehapp/sketch_1.png" /><div class="Listing-contents"> <h1> Project Title</h1> <p> short one line description of the project</p><span> Product Design</span><span>Medical Device</span><span>UI</span><span>UX</span></div></a> </div>
 
 
     </div>
