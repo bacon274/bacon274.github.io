@@ -240,15 +240,32 @@ body {
 .aboutLanding {
     position: relative;
     margin: 30px 12.5% 0 12.5%;
-    display: flex;
-    justify-content: space-between;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
 }
-
+.aboutElement{
+    height: 60vh;
+    width: 100%;
+}
 .aboutText{
     text-align: right;
-    padding-left: 5%;
     
 }
+
+
+@media (max-width: 1000px) {
+    .aboutLanding {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .aboutElement {
+        height: 30vw;
+    }
+}
+
 #contact {
     margin: 130px 12.5% 0 12.5%;
 }
