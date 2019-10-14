@@ -260,9 +260,14 @@ body {
         -moz-column-count: 1;
         column-count: 1;
     }
+    .emailColumns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
 
     .aboutElement {
-        height: 30vw;
+        height: 50vw;
     }
 }
 
@@ -274,4 +279,17 @@ body {
 .contactContainer {
     height: 100vh;
     margin: 0 12.5% 0 12.5%;
+    
+}
+.emailColumns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+.form {
+    width: 100%;
+    padding-top: 130px;
+}
+.formBox{
+    width: 100%;
 }
