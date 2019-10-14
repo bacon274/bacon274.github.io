@@ -140,6 +140,11 @@ body {
     filter: saturate(80%);
     filter: blur(1px);
 }
+.Work-Listing:hover .clientLogo {
+    opacity: 0.5;
+    filter: saturate(80%);
+    filter: blur(1px);
+}
 
 
 .Work-container {
@@ -151,6 +156,13 @@ body {
     column-gap: 5px; /* Specifying Column Gap */
     margin: 0px 12.5% 0px 12.5%;
     /*height: 100vh; TO MAke height of one page potentially with side scrolling of projects?*/
+}
+
+.clientLogo{
+    position: absolute;
+    width: 25%; 
+    right: 5%; 
+    bottom: 0;
 }
 
 @media (max-width: 1000px) {
@@ -185,7 +197,7 @@ body {
         height: 70vw;
     }
 }
-header {
+#landingHeader {
     height: 100vh;
 
 }
@@ -217,5 +229,32 @@ header {
     width: 40%;
     top: 0;
     left: 20px;
+}
+
+.headImage {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.aboutLanding {
+    position: relative;
+    margin: 30px 12.5% 0 12.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutText{
+    text-align: right;
+    padding-left: 5%;
     
+}
+#contact {
+    margin: 130px 12.5% 0 12.5%;
+}
+
+
+.contactContainer {
+    height: 100vh;
+    margin: 0 12.5% 0 12.5%;
 }
