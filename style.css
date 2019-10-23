@@ -220,7 +220,6 @@ body {
     }
 
 .heroImage {
-    height: 100%;
     width: 100%;
     object-fit: cover;
 }
@@ -236,6 +235,47 @@ body {
     width: 50%;
     object-fit: cover;
 }
+.workSectionPage {
+    height: 100vh;
+    position: relative;
+}
+.workSectionContents {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.problemDefinitionContainer {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 10vw;
+}
+    .problemDefinitionContainer div {
+        width: 100%;
+    }
+    .problemDefinitionContainer img {
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+.contextual {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    /*-webkit-column-width: 10vw; */
+}
+.contextual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .aboutLanding {
     position: relative;

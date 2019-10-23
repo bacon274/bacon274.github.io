@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script>
+        $(function () {
+            $.scrollify({
+                section: ".workSectionPage",
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -18,19 +27,40 @@
     </header>
     <!--Landing hero image-->
     <div class="mainBody">
-        <img class="heroImage" src="images/Solo/final.png" />
-        <div class="projectHeader">
-            <h1> Project Title </h1>
-            <h2> Short punchy one sentence description of work </h2>
-            <h3> What the project was / who it was with</h3>
+        <div class="workSectionPage">
+            <img class="heroImage" src="images/Solo/final.png" />
+            <div class="projectHeader">
+                <h1> PolySand Fenceposts</h1>
+                <h2> Designing cost effective building materials using local waste with the charity <a href="https://wasteaid.org/"> WasteAid</a>.</h2>
+                <h3> Final year SOLO project, 2019</h3>
+            </div>
         </div>
-        <div>
+        <div class="workSectionPage">
             <!--Problem Definition-->
-            <h2> fact or figure justifying importance of project</h2>
+            <div class="problemDefinitionContainer workSectionContents">
+                <div> <img src="images\Solo\1x\statAsset 1.png" /></div>
+                <div> <img src="images\Solo\1x\statAsset 2.png" /></div>
+                <div> <img src="images\Solo\1x\statAsset 3.png" />  </div>
+            </div>
         </div>
-        <div>
-            <!--Process-->
-            <h2> key technical skills used / developed in project</h2>
+        <div class="workSectionPage">
+            <!--Solution-->
+            <div class="workSectionContents">
+                <h1>
+                    <b>Polysand </b>is a novel material made from <b>waste plastic </b> and <b>sand</b>.
+                    <br /><br />The production of cost effective polysand products facilitates environmental clear up and creates work in areas that need it most.
+                </h1>
+            </div></div>
+        <div class="contextual workSectionPage">
+            <!--Fenceposts-->
+            <div> <h1> Why Fenceposts?</h1> <h2>
+                The building sector is one of the biggest contributors to energy and resource depletion, with the consumption of 40% of the world's material and energy
+                flows attributed to the housing sector.
+                Fences and walls are ubiquitous throughout the world but hold a particular relevance for Sub-Saharan
+                African countries. Where compound housing is incredibly popular especially in rural and low-income areas.
+                </h2></div>
+            <div> <img src="images\Solo\postFill.jpg" /></div>
+
         </div>
     </div>
 
