@@ -202,20 +202,19 @@ body {
 
 }
 
-.mainBody {
+.workMainBody {
     position: absolute;
     margin: 30px 12.5% 0 12.5%;
-    
 }
 
-    .mainBody h1 {
+    .workMainBody h1 {
         font-size: 50px;
         font-weight: lighter;
     }
-    .mainBody h2 {
+    .workMainBody h2 {
         font-weight: lighter;
     }
-    .mainBody h3 {
+    .workMainBody h3 {
         font-weight: lighter;
     }
 
@@ -285,22 +284,33 @@ body {
 }
 
 @media (max-width: 1000px) {
-    .mainBody h1 {
+    .workMainBody h1 {
         font-size: 30px;
     }
-    .mainBody h2 {
+    .workMainBody h2 {
         font-size: 20px;
     }
 }
 
-
-
 @media (max-width: 500px) {
-    .mainBody h1 {
+    .workMainBody h1 {
         font-size: 20px;
     }
-    .mainBody h2 {
+    .workMainBody h2 {
         font-size: 20px;
+    }
+    .projectHeader {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 20px;
+    }
+    .problemDefinitionContainer {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        
+        
     }
 }
     
