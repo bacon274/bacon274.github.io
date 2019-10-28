@@ -263,13 +263,21 @@ body {
         object-fit: cover;
     }
 
-
-.contextual {
-    -webkit-column-count: 2;
+.twoPartDetailContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    /*-webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    /*-webkit-column-width: 10vw; */
+    -webkit-column-width: 10vw; */
 }
+.twoPartDetailSubdivison {
+    width: 40%;
+    padding: 10vh 0 10vh 0;
+}
+
 .contextual img {
     width: 100%;
     height: 100%;

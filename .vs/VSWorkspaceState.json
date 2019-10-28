@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\js"
   ],
-  "SelectedNode": "\\Logo.png",
+  "SelectedNode": "\\js\\jquery.easing.compatibility.js",
   "PreviewInSolutionExplorer": false
 }
