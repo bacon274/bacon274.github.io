@@ -284,60 +284,67 @@ body {
     object-fit: cover;
 }
 
-
-.aboutLanding {
-    position: relative;
-    margin: 30px 12.5% 0 12.5%;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-}
-.aboutElement{
-    height: 60vh;
-    width: 100%;
-}
-.aboutText{
-    text-align: right;
-    
-}
-
-
-@media (max-width: 700px) {
-    .aboutLanding {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
+@media (max-width: 1000px) {
+    .mainBody h1 {
+        font-size: 30px;
     }
+    .mainBody h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .mainBody h1 {
+        font-size: 20px;
+    }
+    .mainBody h2 {
+        font-size: 20px;
+    }
+}
+    
+
+
+    @media (max-width: 700px) {
+        .aboutLanding {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+
+        .emailColumns {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+
+        .aboutElement {
+            height: 50vw;
+        }
+    }
+
+    #contact {
+        margin: 130px 12.5% 0 12.5%;
+    }
+
+
+    .contactContainer {
+        height: 100vh;
+        margin: 0 12.5% 0 12.5%;
+    }
+
     .emailColumns {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
     }
 
-    .aboutElement {
-        height: 50vw;
+    .form {
+        width: 100%;
+        padding-top: 130px;
     }
-}
 
-#contact {
-    margin: 130px 12.5% 0 12.5%;
-}
-
-
-.contactContainer {
-    height: 100vh;
-    margin: 0 12.5% 0 12.5%;
-    
-}
-.emailColumns {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-}
-.form {
-    width: 100%;
-    padding-top: 130px;
-}
-.formBox{
-    width: 100%;
-}
+    .formBox {
+        width: 100%;
+    }
