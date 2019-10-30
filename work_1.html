@@ -5,7 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                  /* var current = document.getElementsByClassName(" active");
+                   current[0].className = current[0].className.replace(" active", "");
+                   dots[i].className += " active"; */
+                })
+            };
+        });
+        
+        window.onscroll = function () {
+            
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }	
+   
+        }
+   
+
+    </script>
+
 </head>
 <body>
     <header>
@@ -19,45 +58,77 @@
     </header>
     <!--Landing hero image-->
     <div class="workMainBody">
-        <div>
-            <h1> PolySand Fenceposts</h1>
-            <h2> Designing cost effective building materials using local waste with the charity <a href="https://wasteaid.org/"> WasteAid</a>.</h2>
-            <h3> Final year SOLO project, 2019</h3>
-        </div>
-        <img class="heroImage" src="images/Solo/final.png" />
-        <h2>
-            <b>Polysand </b>is a novel material made from <b>waste plastic </b> and <b>sand</b>.
-            The production of cost effective polysand building materials facilitates environmental clear up and creates locally useful products.
-            <br />
-            <br />
-        </h2>
-        <img class="subImage" src="images\Solo\pollution.jpg" />
-        <h2>
-            I focused my work in Gunjur, The Gambia where pollution has become a serious local issue.
-            Although the lack of waste management is a global problem.
-        </h2>
-        <br />
-        <br />
-        <div class="problemDefinitionContainer">
-            <div> <img src="images\Solo\1x\statAsset 1.png" /></div>
-            <div> <img src="images\Solo\1x\statAsset 2.png" /></div>
-            <div> <img src="images\Solo\1x\statAsset 3.png" />  </div>
-        </div>
-        <br />
-        <br />
-        <h2>
-            My challenge was to find product applications for this material that are driven by local needs, are cost effective and take into account the properties of the material.
-            <br />
-            <br />
-            <img class="subImage" src="images\Solo\fence.png" />
-            </h2>
-        <h2>
-                 Fences and walls are ubiquitous throughout the world but hold a particular relevance for Sub-Saharan
-                 African countries where compound housing is incredibly popular especially in rural and low-income areas.
-            <br />
-            <br />
+        <ul class="pagination">
+            <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Top </span> </a></li>
+            <li> <a href="#context" class="paginationA"> <span class="hover-text"> Context </span> </a></li>
+            <li> <a href="#probDev" class="paginationA"> <span class="hover-text"> Optimisation </span> </a></li>
+            <li> <a href="#top" class="paginationA"> <span class="hover-text"> Top </span> </a></li>
+        </ul>
+        <div class="workAnchor" id="top">
+            <div>
+                <h1> PolySand Fenceposts</h1>
+                <h2> Designing cost effective building materials using local waste with the charity <a href="https://wasteaid.org/"> WasteAid</a>.</h2>
+                <h3> Final year SOLO project, 2019</h3>
+            </div>
+            <img class="heroImage" src="images/Solo/final.png" />
 
-        </h2>
+            <h2>
+                <b>Polysand </b>is a novel material made from <b>waste plastic </b> and <b>sand</b>.
+                The production of cost effective polysand building materials facilitates environmental clear up and creates locally useful products.
+                <br />
+                <br />
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="context">
+            <h1> Context</h1>
+
+            <div class="subImage">
+                <img src="images\Solo\pollution.jpg" />
+                <h3> <i> Beach pollution in Gunjur, The Gambia</i> </h3>
+            </div>
+            <h2>
+                I focused my work in Gunjur, a village in The Gambia where WasteAid are working on a plastic recycling project. Here pollution has become a serious local issue
+                Although the lack of waste management is a global problem.
+            </h2>
+            <br />
+            <br />
+            <div class="problemDefinitionContainer">
+                <div> <img src="images\Solo\1x\statAsset 1.png" /></div>
+                <div> <img src="images\Solo\1x\statAsset 2.png" /></div>
+                <div> <img src="images\Solo\1x\statAsset 3.png" />  </div>
+            </div>
+            <br />
+            <br />
+            <h2>
+                My challenge was to find product applications for this material that are driven by local needs, are cost effective and take into account the properties of the material.
+                <br />
+                <br />
+            </h2>
+            <div class="subImage">
+                <img src="images\Solo\fence.png" />
+                <h3> <i> Typical fence construction with posts connected with wire</i> </h3>
+            </div>
+
+            <h2>
+                Fences and walls are ubiquitous throughout the world but hold a particular relevance for Sub-Saharan
+                African countries where compound housing is incredibly popular especially in rural and low-income areas.
+                <br />
+                <br />
+
+            </h2>
+        </div>
+        <div class="workAnchor" id="probDev">
+            <h1>Optimisation</h1>
+            <div class="subImage">
+                <img src="images\Solo\1x\graphAsset 1.png" />
+                <h3> <i> Graph showing the mass and maximum stress of different beam cross sections </i> </h3>
+            </div>
+            <h2>
+                lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />
+
+            </h2>
+        </div>
 
 
 
