@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery.scrollify.js"></script>
     <script src="js/jquery.easing.compatibility.js"></script>
@@ -13,7 +14,7 @@
         var anchors;
         var dots;
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             anchors = document.getElementsByClassName('workAnchor');
             dots = document.getElementsByClassName('paginationA');
             console.log("anchor points:" + anchors.length);
@@ -21,9 +22,9 @@
 
             for (var i = 0; i < dots.length; i++) {
                 dots[i].addEventListener("click", function () {
-                  /* var current = document.getElementsByClassName(" active");
-                   current[0].className = current[0].className.replace(" active", "");
-                   dots[i].className += " active"; */
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
                 })
             };
         });
@@ -60,11 +61,9 @@
     <div class="workMainBody">
         <ul class="pagination">
             <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Intro </span> </a></li>
-            <li> <a href="#context" class="paginationA"> <span class="hover-text"> Context </span> </a></li>
             <li> <a href="#looksLike" class="paginationA"> <span class="hover-text"> Lookalike Prototype </span> </a></li>
-            <li> <a href="#worksLike" class="paginationA"> <span class="hover-text"> Technical Prototype </span> </a></li>
-            <li> <a href="#prototype" class="paginationA"> <span class="hover-text"> Prototype </span> </a></li>
-
+            <li> <a href="#worksLike" class="paginationA"> <span class="hover-text"> Functional Prototype </span> </a></li>
+            
         </ul>
         <div class="workAnchor" id="top">
             <div>
@@ -84,12 +83,7 @@
             </h2>
         </div>
 
-        <div class="workAnchor" id="context">
-            <h1> Context</h1>
-
-        
-            
-        </div>
+       
         <div class="workAnchor" id="looksLike">
             <h1>Lookalike Prototype</h1>
             <h2>
@@ -113,6 +107,7 @@
                 <div> <img src="images\Amun\finalIter.png" /></div>
             </div>
             <h3> <i>Design iterations: bluefoam models, low fidelity prototype, high fidelity prototype. </i></h3>
+            <h2> Final Design:</h2>
             <div class="subImage" style="width:100%; padding: 5vh 0 2vh 0;">
                 <img src="images\Amun\fulltext.png" />
                 <h3> <i>Overall product design.</i></h3>
@@ -123,33 +118,33 @@
             <h2>
                 The device had to measure air volume accurately.
                 Hot Wire Anemometry was used to measure the speed of airflow, from which volume could
-                be calculated.
+                be calculated. This method was used for its low cost and high performance.
             </h2>
 
-            <div class="problemDefinitionContainer">
-                <div> <img src="images\Amun\revc.png" /></div>
-                <div> <img src="images\Amun\workingPrototype1.png" /></div>
+            <div class="problemDefinitionContainer" style="-webkit-column-count: 2;-moz-column-count: 2; column-count: 2; padding:0 10vw 0 10vw;">
+                <div> <img src="images\Amun\revc.png" /><h3><i>Airflow sensor </i></h3></div>
+                <div> <img src="images\Amun\workingPrototype1.png" /><h3><i>Protototype setup</i></h3></div>
 
             </div>
-
+            <h2>
+                The sensor was first callibrated by passing known a known volume of air through the device
+                and calculating a scaling factor.
+            </h2>
+            <h2> Signal Processing was an important step for producing useful data:</h2>
             <div class="problemDefinitionContainer">
-                <div> <img src="images\Amun\lowpass.gif" /></div>
-                <div> <img src="images\Amun\edgedetect.gif" /></div>
-                <div> <img src="images\Amun\volumeCalculation.gif" /></div>
-
+                <div> <img src="images\Amun\lowpass.gif" /> <h3> <i> Low pass filter to smooth signal  </i></h3></div>
+                <div> <img src="images\Amun\edgedetect.gif" /> <h3> <i>Edge detection of breath to eliminate trailing edge of signal </i> </h3> </div>
+                <div> <img src="images\Amun\volumeCalculation.gif" /><h3> <i> Calculating volume by integrating the flow speed </i></h3></div>
             </div>
+            <div class="subImage">
+                <img src="images\Amun\jacobBreathing.png" />
+                <h3> <i>Testing the device functionality.</i></h3>
+            </div>
+
+            <h2>The device produced results with an <b>accuracy: ±0.03 Litres</b> and <b>precision: ±0.01 Litres</b> </h2>
 
 
         </div>
-
-        <div class="workAnchor" id="prototype">
-            <h1>Prototype</h1>
-
-        </div>
-
-
-
-
 
 
     </div>

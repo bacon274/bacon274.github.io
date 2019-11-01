@@ -6,6 +6,10 @@ body {
     font-family: proxima-nova, Arial;
 }
 
+.cochlea{
+    background-color: black; 
+    color: white;
+}
 
 .dynamicHeaderContainer {
     position: absolute;
@@ -55,6 +59,20 @@ body {
         color: black;
     }
 
+.cochleaMenuText {
+    text-decoration: none;
+    text-transform: lowercase;
+    color: white;
+}
+    .cochleaMenuText span {
+        line-height: 130px;
+        font-size: 25px;
+        color: white;
+    }
+    .cochleaMenuText:hover {
+        font-weight: bolder;
+        border-bottom: 4.5px solid white;
+    }
 .menu-container {
     display: flex;
     justify-content: space-between;
@@ -68,6 +86,14 @@ body {
     width: auto;
     vertical-align: bottom;
     display: none;
+}
+
+.cochleaLogo {
+    height: 100px;
+    width: auto;
+    vertical-align: bottom;
+    display: none;
+    filter: invert(100%);
 }
 
 .name {
@@ -192,6 +218,10 @@ body {
         display: block;
         vertical-align: top;
     }
+    .cochleaLogo {
+        display: block;
+        vertical-align: top;
+    }
 
     .Work-image {
         height: 70vw;
@@ -222,8 +252,11 @@ body {
 }
 
 .paginationA.active:after {
-    box-shadow:  inset 0 0 0 5px black;
+    box-shadow:  inset 0 0 0 5px ;
 }
+
+
+
 
 .paginationA .hover-text {
     position: absolute;
@@ -291,6 +324,7 @@ ul, ol {
     width: 100%;
     object-fit: cover;
     padding: 30px 0 30px 0;
+    height: 100vh;
 }
 
 .subImage {
@@ -435,7 +469,7 @@ ul, ol {
 
 }
 
-    
+ 
 
 
     @media (max-width: 700px) {

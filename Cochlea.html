@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+
+</head>
+<body class="cochlea">
+    
+    <header>
+        <section class="menu-container">
+            <a class="cochleaMenuText" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="cochleaMenuText"> <span class="name"> Jacob Mitchell </span> <span> <img class="cochleaLogo" src="images/logodpi.png"></span> </a>
+            <a class="cochleaMenuText" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination" ;>
+            <li> <a href="#top" class="paginationA active" style="color:white"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#video" class="paginationA" style="color:white"> <span class="hover-text"> Video </span> </a></li>
+            <li> <a href="#theory" class="paginationA" style="color:white"> <span class="hover-text"> Theory </span> </a></li>
+            <li> <a href="#prototype" class="paginationA" style="color:white"> <span class="hover-text"> Prototype </span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="top">
+            <img class="heroImage" style=" object-fit: contain;" src="images/Cochlea/webreadyzoom.png" />
+            <div>
+                <h1> Cochlea </h1>
+                <h2>Visualising the functionality of the ear.</h2>
+                <h3> 2018 - Group Project with Anna Bernbuam, Benedict Greenburg, Benjamin Pheipher, Shivam Bhatnagar and Lidia Dynes-Martinez</h3>
+            </div>
+
+
+            <h2>
+                
+            </h2>
+        </div>
+        <div class="workAnchor" id="video">
+            <h1>Video</h1>
+
+        </div>
+
+        <div class="workAnchor" id="theory">
+            <h1>Theory</h1>
+           
+        </div>
+        <div class="workAnchor" id="prototype">
+            <h1>Prototype</h1>
+            
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

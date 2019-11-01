@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery.scrollify.js"></script>
     <script src="js/jquery.easing.compatibility.js"></script>
@@ -13,7 +14,7 @@
         var anchors;
         var dots;
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             anchors = document.getElementsByClassName('workAnchor');
             dots = document.getElementsByClassName('paginationA');
             console.log("anchor points:" + anchors.length);
@@ -21,15 +22,15 @@
 
             for (var i = 0; i < dots.length; i++) {
                 dots[i].addEventListener("click", function () {
-                  /* var current = document.getElementsByClassName(" active");
-                   current[0].className = current[0].className.replace(" active", "");
-                   dots[i].className += " active"; */
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
                 })
             };
         });
-        
+
         window.onscroll = function () {
-            
+
             for (var i = 0; i < anchors.length; i++) {
                 console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
                 if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
@@ -38,10 +39,10 @@
                     current[0].className = current[0].className.replace(" active", "");
                     dots[i].className += " active";
                 }
-            }	
-   
+            }
+
         }
-   
+
 
     </script>
 
