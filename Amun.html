@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                  /* var current = document.getElementsByClassName(" active");
+                   current[0].className = current[0].className.replace(" active", "");
+                   dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#context" class="paginationA"> <span class="hover-text"> Context </span> </a></li>
+            <li> <a href="#looksLike" class="paginationA"> <span class="hover-text"> Lookalike Prototype </span> </a></li>
+            <li> <a href="#worksLike" class="paginationA"> <span class="hover-text"> Technical Prototype </span> </a></li>
+            <li> <a href="#prototype" class="paginationA"> <span class="hover-text"> Prototype </span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="top">
+            <div>
+                <h1> Amun </h1>
+                <h2> Designing a low cost Spirometer.</h2>
+                <h3> 2017 - Group Project with Lidia Dynes-Martinez, Felix Crowther and Bea Lopez</h3>
+            </div>
+            <img class="heroImage" src="images/Amun/main_notext.png" />
+
+            <h2>
+                <b>Amun </b>is a low cost spirometer (lung measuring device) that can measure <b> tidal volume </b>
+                and with the addition of a nitrogen washout module <b> total lung capacity</b>.
+                <br />
+                <br />
+                Amun was designed for use in <b> urban India</b>, which has the highest global rate of 
+                lung disease due to high levels of pollution and population density. 
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="context">
+            <h1> Context</h1>
+
+        
+            
+        </div>
+        <div class="workAnchor" id="looksLike">
+            <h1>Lookalike Prototype</h1>
+            <h2>
+                The final design underwent much refinement and iteration from concept sketches, rapid prototyping
+                and testing with end users.
+                <br /> <br />
+
+            </h2>
+            <div class="subImage">
+                <img src="images\Amun\Graphics\sketchAsset 1.png" />
+                <h3> <i>Initial concept sketches.</i></h3>
+            </div>
+            <div class="subImage">
+                <img src="images\Amun\Graphics\usertest.png" />
+                <h3> <i>Bluefoam models used for user testing.</i></h3>
+            </div>
+
+            <div class="problemDefinitionContainer">
+                <div> <img src="images\Amun\blue.png" /></div>
+                <div> <img src="images\Amun\firstIter.png" /></div>
+                <div> <img src="images\Amun\finalIter.png" /></div>
+            </div>
+            <h3> <i>Design iterations: bluefoam models, low fidelity prototype, high fidelity prototype. </i></h3>
+            <div class="subImage" style="width:100%; padding: 5vh 0 2vh 0;">
+                <img src="images\Amun\fulltext.png" />
+                <h3> <i>Overall product design.</i></h3>
+            </div>
+        </div>
+        <div class="workAnchor" id="worksLike">
+            <h1>Functional Prototype</h1>
+            <h2>
+                The device had to measure air volume accurately.
+                Hot Wire Anemometry was used to measure the speed of airflow, from which volume could
+                be calculated.
+            </h2>
+
+            <div class="problemDefinitionContainer">
+                <div> <img src="images\Amun\revc.png" /></div>
+                <div> <img src="images\Amun\workingPrototype1.png" /></div>
+
+            </div>
+
+            <div class="problemDefinitionContainer">
+                <div> <img src="images\Amun\lowpass.gif" /></div>
+                <div> <img src="images\Amun\edgedetect.gif" /></div>
+                <div> <img src="images\Amun\volumeCalculation.gif" /></div>
+
+            </div>
+
+
+        </div>
+
+        <div class="workAnchor" id="prototype">
+            <h1>Prototype</h1>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>

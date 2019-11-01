@@ -61,8 +61,10 @@
         <ul class="pagination">
             <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Top </span> </a></li>
             <li> <a href="#context" class="paginationA"> <span class="hover-text"> Context </span> </a></li>
-            <li> <a href="#probDev" class="paginationA"> <span class="hover-text"> Optimisation </span> </a></li>
-            <li> <a href="#top" class="paginationA"> <span class="hover-text"> Top </span> </a></li>
+            <li> <a href="#polysand" class="paginationA"> <span class="hover-text"> Polysand </span> </a></li>
+            <li> <a href="#optimisation" class="paginationA"> <span class="hover-text"> Optimisation </span> </a></li>
+            <li> <a href="#prototype" class="paginationA"> <span class="hover-text"> Prototype </span> </a></li>
+
         </ul>
         <div class="workAnchor" id="top">
             <div>
@@ -74,7 +76,7 @@
 
             <h2>
                 <b>Polysand </b>is a novel material made from <b>waste plastic </b> and <b>sand</b>.
-                The production of cost effective polysand building materials facilitates environmental clear up and creates locally useful products.
+                The production of cost effective polysand fenceposts facilitates environmental clear up and creates locally useful products.
                 <br />
                 <br />
             </h2>
@@ -85,7 +87,7 @@
 
             <div class="subImage">
                 <img src="images\Solo\pollution.jpg" />
-                <h3> <i> Beach pollution in Gunjur, The Gambia</i> </h3>
+                <h3> <i> Beach pollution in Gunjur, The Gambia <br />Credits: WasteAid UK</i> </h3>
             </div>
             <h2>
                 I focused my work in Gunjur, a village in The Gambia where WasteAid are working on a plastic recycling project. Here pollution has become a serious local issue
@@ -118,16 +120,73 @@
 
             </h2>
         </div>
-        <div class="workAnchor" id="probDev">
+        <div class="workAnchor" id="polysand">
+            <h1>A case for Polysand</h1>
+            <h2>
+                Polysand is novel material made from low density polyethylene (LDPE) and sand.
+                <br /> <br />
+                LDPE films are one of the most common and problematic waste streams.
+                It is used widely for packaging and often cannot be recycled.
+                <br /> <br />
+                Typically, because of the cost of collecting and processing waste upcycled or recycled
+                goods are <i> artisanal </i> and unscalable.
+                <br /> <br />
+                The addition of sand dramatically
+                <b>improves the material properties while dramatically lowering the cost of manufacturing </b>
+                compared to making pure plastic products.
+                <br /> <br />
+                Polysand is made from 75% sand which acts as aggregate bound together by the plastic.
+                The material properties have been characterised by the researchers at Imperial
+                College London (paper <a href="https://wasteaid.org/research-paper-how-to-recycle-plastic-waste-into-paving-tiles/">here</a>)
+                who liken the material to concrete.
+                <br /><br />
+                Polysand is currently being used to make paving tiles in a WasteAid workshop in Gunjur in the Gambia.
+            </h2>
+            <div class="subImage">
+                <img src="images\Solo\Pierre-laying-tiles-1.jpg" />
+                <h3> <i>Polysand tiles being laid in Gunjur, The Gambia. <br />Credits: WasteAid UK</i></h3>
+            </div>
+
+        </div>
+        <div class="workAnchor" id="optimisation">
             <h1>Optimisation</h1>
+            <h2>
+                Fenceposts are fairly low value, so to make a sustainable business case, the product had to be optimised for cost effectiveness and designed for low cost manufacturing techniques.
+            </h2>
             <div class="subImage">
                 <img src="images\Solo\1x\graphAsset 1.png" />
                 <h3> <i> Graph showing the mass and maximum stress of different beam cross sections </i> </h3>
             </div>
             <h2>
-                lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />lorum ipsum<br />
-
+                Different cross sectional geometries with the same baseline dimensions were compared in three categories:
+                strength, mass and ease of manufacture. Strength was tested using FEA simulations of the fencepost under loading and the
+                maximum stress was recorded. Ease of manufacture was approximated depending on the complexity
+                of mould required to produce the shape. An overall score was calculated from these three
+                metrics and the best cross section selected.
             </h2>
+            <div class="subImage">
+                <img src="images\Solo\1x\graph2Asset 1.png" />
+                <h3> <i> Graph showing the ease of manufacture and different beam cross sections </i> </h3>
+            </div>
+            <h2>
+                Although subjective, this method helped me
+                select an appropriate design to then optimise numerically. <br /><br /> The following is the beam bending formulation 
+                that was used to numerically minimise the volume of the beam while satisfying that the bending stress is less than the strength of the material.
+            </h2>
+            <div class="subImage">
+                <img src="images\Solo\1x\equationAsset 1.png" />
+                <h3> <i> Optimisation formulation for cross-section dimensions </i> </h3>
+            </div>
+            <div class="subImage">
+                <img src="images\Solo\1x\equationAsset 2.png" />
+                <h3> <i> Diagram of dimension variables </i> </h3>
+            </div>
+            <h2> The MATLAB optimisation solution gave the dimensions for the fencepost design.  </h2>
+        </div>
+
+        <div class="workAnchor" id="prototype">
+            <h1>Prototype</h1>
+
         </div>
 
 
