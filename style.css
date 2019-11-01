@@ -201,6 +201,17 @@ body {
     .Work-image {
         height: 30vw;
     }
+
+    .Listing-contents h1{
+        font-size: 20px;
+    }
+    .Listing-contents p {
+        font-size: 15px;
+    }
+    .Listing-contents span {
+        font-size: 12px;
+    }
+
 }
 
 @media (max-width: 500px) {
