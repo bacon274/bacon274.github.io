@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="en-UK">
+
+<div onmousemove="showCoords(event)">
+    <a>
+      <img src="1.png" alt="innocent" width="1000" id="image">
+    </a>
+  </div>
+
+<p id = 'text'> placeholder text</p>
+
+<script>
+var links = [
+  'https://picoolio.net/images/2018/07/04/16ae6daa456e4f3be.png',
+  'https://picoolio.net/images/2018/07/04/286badf747066d664.png',
+  'https://picoolio.net/images/2018/07/04/300785e47cd43e93b.png',
+  'https://picoolio.net/images/2018/07/04/482cd3b4413835b6b.png',
+  'https://picoolio.net/images/2018/07/04/560f71d7d72a3bf32.png',
+  'https://picoolio.net/images/2018/07/04/619fa5e3bafad83fc.png',
+  'https://picoolio.net/images/2018/07/04/73510d65a16d2e0f7.png',
+  'https://picoolio.net/images/2018/07/04/8fbdd56fa0dd40f17.png',
+  'https://picoolio.net/images/2018/07/04/9d862faf516664a72.png',
+  'https://picoolio.net/images/2018/07/04/1050144a2fcea92a1e.png',
+  'https://picoolio.net/images/2018/07/04/11ab1cabd132326389.png',
+  'https://picoolio.net/images/2018/07/04/1246cba8e89e22f680.png',
+  'https://picoolio.net/images/2018/07/04/13ce9d8486c7ed2d09.png',
+  'https://picoolio.net/images/2018/07/04/146525d61443f80e52.png',
+  'https://picoolio.net/images/2018/07/04/15266b0e5ccfcf474d.png',
+  'https://picoolio.net/images/2018/07/04/160a949ed0aa5e1f41.png',
+  'https://picoolio.net/images/2018/07/04/1799156a5320ce9bfb.png',
+  'https://picoolio.net/images/2018/07/04/184e1befad6a3c2d06.png',
+  'https://picoolio.net/images/2018/07/04/19937d12117b53b469.png',
+  'https://picoolio.net/images/2018/07/04/2050a75b8631f78502.png',
+  'https://picoolio.net/images/2018/07/04/215b18c68bad83ba94.png',
+  'https://picoolio.net/images/2018/07/04/22a6e5fc18f0c49e54.png',
+  'https://picoolio.net/images/2018/07/04/230e8a4f4bf6bc8849.png',
+  'https://picoolio.net/images/2018/07/04/247ffabc21b5f4a35c.png',
+  'https://picoolio.net/images/2018/07/04/2507d69de6f1c0bbaa.png',
+  'https://picoolio.net/images/2018/07/04/26004f2e3a513652d8.png',
+  'https://picoolio.net/images/2018/07/04/27b4095e7c2ea8704e.png',
+  'https://picoolio.net/images/2018/07/04/28152e571eab68da8e.png',
+  'https://picoolio.net/images/2018/07/04/29561524890f80ca7b.png',
+  'https://picoolio.net/images/2018/07/04/30da38578df0c6e4a4.png',
+  'https://picoolio.net/images/2018/07/04/31af56c6d5c04dc007.png'
+  
+]
+
+function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("text").innerHTML = coords;
+    var num = Math.ceil((x/1000)*31)
+    if(num>30){num = 30}
+    document.getElementById("text").innerHTML = num-1+'.png';
+    document.getElementById("image").src = links[num];
+}
+</script>
+
+</html>

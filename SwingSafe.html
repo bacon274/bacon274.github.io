@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+    <script language="JavaScript">
+        $(document).ready(function(){
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="'+ $('#videoPlaceholder').attr('data-video') +'"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+                
+
+
+            });
+            
+        });
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#background" class="paginationA"> <span class="hover-text"> Background </span> </a></li>
+            <li> <a href="#tech" class="paginationA"> <span class="hover-text"> How it works </span> </a></li>
+            <li> <a href="#userTesting" class="paginationA"> <span class="hover-text"> User Testing </span> </a></li>
+            <li> <a href="#Market" class="paginationA"> <span class="hover-text"> The Market </span> </a></li>
+            <li> <a href="#Strategy" class="paginationA"> <span class="hover-text"> Strategy </span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="top">
+            <div>
+                <h1> SwingSafe </h1>
+                <h2> The smart back brace for golfers.</h2>
+                <h3> 2019 - Group Project with Lidia Dynes-Martinez and Renke Huang </h3>
+            </div>
+            <div class="videoFrame">
+                <img class="playIcon" id="play" src="images/Video/playAsset 1.png" />
+                <img class="heroImage" id="videoPlaceholder" src="images/Ero/swingsafe.jpg" data-video="https://www.youtube.com/embed/ja6xo2xzJhY?rel=0&showinfo=0&autohide=1&modestbranding=1&autoplay=1" />
+            </div>
+            <div class="tube"></div>
+
+            <h2>
+                <b>SwingSafe </b> is a smart back brace for golfers that helps <b>prevent lower back injury</b>.
+                <br />
+                <br />
+                Check out the <a style="color: black;" target="_blank" href="https://www.kickstarter.com/projects/swingsafe/1476242707?ref=835105&token=61537bd4"> Kickstarter campaign </a>
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="background">
+            <h1>Background</h1>
+            <h2>
+                Golf is such an important part of many people's lives.
+                <br />
+                <br />
+
+
+                Shockingly <b>golf injuries are more frequent </b> than many contact sports such as rugby and boxing  with <b>lower back injury</b>
+                being the most common <a class="links" href="https://www.cdc.gov/nchs/data/nhsr/nhsr099.pdf">[1]</a>.
+                <br />
+                <br />
+
+                SwingSafe aims to change this.
+
+
+
+
+            </h2>
+
+        </div>
+        <div class="workAnchor" id="tech">
+            <h1>How it works</h1>
+            <h2>
+                SwingSafe is a wearable device, worn on the lower back, which when calibrated can
+                alert players as to when they have performed a swing with a high risk of injury to their
+                back. This helps players learn their safe limits and extend their golfing career.
+
+                <br />
+                <br />
+
+            </h2>
+            <div class="subImage" style="width:100%; padding: 5vh 0 2vh 0;">
+                <img src="images\Ero\1x\ssAsset 5.png" />
+                <h3> <i>Overall product design.</i></h3>
+            </div>
+
+        </div>
+
+        <div class="workAnchor" id="userTesting">
+            <h1>User Testing</h1>
+            <h2>
+                The SwingSafe team got to know golfers at Ealing Golf Club in West London.
+                This helped us understand real painpoints and test our assumptions about the product.
+            </h2>
+           
+            <div class="workTwoColumn" >
+                <div> <img src="images\Ero\1x\swingTestRatio.png" /><h3><i>Testing a swing while using our product.</i></h3></div>
+                <div> <img src="images\Ero\1x\Screen prototypes.png" /><h3><i>Exploring app features.</i></h3></div>
+
+            </div>
+            <h2>
+                Their feedback was vital to shaping the product.
+                <br />
+                <br />
+                We discovered the strong relationship betwen players and Ricky,
+                the Pro in the Pro-Shop. Ricky knew exactly who at they club would
+                benefit from our product and people trusted him.
+                Therefore, we adjusted our business model accordingly to utilise
+                this key channel to reach our core customers.
+                <br />
+                <br />
+                We also learnt about golf green etiquette, and how discretion and minimal phone
+                usage would have to considered. This led to us changing the feedback system
+                from audible to vibrational. 
+
+
+            </h2>
+        </div>
+        <div class="workAnchor" id="Market">
+            <h1>The Market</h1>
+            <h2>
+                Golf is a lucrative sport, demonstrating stable or accelerated growth across all major
+                markets. Euromonitor estimates the global population of golfers
+                at 8OM+ supporting a market that in 2016 was
+                worth over $130 billion.
+                <br />
+                <br />
+                In the UK, where we hope to focus our efforts
+                initially, there are 11 M+ golfers and a market
+                worth of £43 billion. The population of golfers is increasing at a
+                rate of 1.27% per annum in the UK and finding
+                newfound popularity in Asia.
+                <br />
+                <br />
+                The proportion of golfers aged 60+ was 25% in 2016 and this demographic
+                is predicted to take 42% of the average
+                increase of golfers by 2020.
+                <br />
+                <br />
+                Over a third of amateur golfers experience back injuries and this issue is
+                expected to grow as the ageing population shifts.
+                <br />
+                <br />
+                The opportunity for our product is driven by a surge in the adoption of
+                consumer technology by golfing
+                communities. The number of Golfers that use smartphones is up 47% since
+                2011. Online sales are up 39% since
+                2011. The use of technology on the course is undeniable with 64% watching
+                instructional videos. 47% using a
+                launch monitor and 22% using a stat tracking system.
+
+                SAM TAM DIAGRAM
+
+            </h2>
+
+
+        </div>
+        <div class="workAnchor" id="Strategy">
+            <h1>Strategy</h1>
+
+        </div>
+
+
+</body>
+
+</html>

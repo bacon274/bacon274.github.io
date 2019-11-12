@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+    <script language="JavaScript">
+        $(document).ready(function(){
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="'+ $('#videoPlaceholder').attr('data-video') +'"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+
+
+
+            });
+
+        });
+
+    </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#animatedTable").mousemove(function (event) {
+                var x = event.clientX;
+                var y = event.clientY;
+                var coords = "X coords: " + x + ", Y coords: " + y;
+                // document.getElementById("text").innerHTML = coords;
+                var num = Math.ceil((x / 1000) * 31)
+                if (num > 30) { num = 30 }
+               // document.getElementById("text").innerHTML = num - 1 + '.png';
+                document.getElementById("animatedTable").src = "images/Goldfinger/animaton 2/" + num + ".png";
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#furniture" class="paginationA"> <span class="hover-text"> Furniture </span> </a></li>
+            <li> <a href="#marketing" class="paginationA"> <span class="hover-text"> Marketing </span> </a></li>
+            <li> <a href="#workshops" class="paginationA"> <span class="hover-text"> Workshops </span> </a></li>
+            <li> <a href="#digitalWorkflow" class="paginationA"> <span class="hover-text"> Digital Workflow </span> </a></li>
+            <li> <a href="#plastics" class="paginationA"> <span class="hover-text"> Plastics </span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="top">
+            <div>
+                <h1> Goldfinger Factory </h1>
+                <h2> 6 month internship with a sustainable design social enterprise.</h2>
+                <h3> 2019 </h3>
+            </div>
+            <img class="heroImage" src="images/Goldfinger/front.jpeg" />
+
+            <h2>
+                <b>Goldfinger Factory</b> is an award-winning sustainable design social
+                enterprise.
+                <br />
+                <br />
+                Guided by a passion for circular economy principles
+                and an inclusive community, Goldfinger Factory combines a bespoke
+                furniture and interiors business
+                with a Teaching Academy for less advantaged young people.
+                <br />
+                <br />
+                The joy of working for a small company was the variety of work I
+                got to take ownership of. I was involved in key operations which included:
+                <ul class="listText">
+                    <li> • <b>Furniture Design</b> from waste streams</li>
+                    <li> • <b>Media Content</b> and Web Development</li>
+                    <li> • <b>Educational Workshops</b></li>
+                    <li> • Building the foundation of a <b>Digital Workflow</b></li>
+                    <li> • <b>Plastic Recycling</b> Project</li>
+                </ul>
+                
+            </h2>
+        </div>
+        <div class="workAnchor" id="furniture">
+            <h1>Furniture Design</h1>
+            <h2> Describe client projects, monaco table etc. </h2>
+        </div>
+        <div class="workAnchor" id="marketing">
+            <h1>Marketing Materials</h1>
+            <h2> Describe graphic design of posters, brochures and website. Include animated table. </h2>
+            <img class="heroImage" id="animatedTable" src="images\Goldfinger\animaton 2\1.png" />
+            <h1 id="text"> </h1>
+        </div>
+        <div class="workAnchor" id="workshops">
+            <h1>Education</h1>
+            <h2> Describe makemore festival, corporate events </h2>
+        </div>
+        <div class="workAnchor" id="digitalWorkflow">
+            <h1>Digital Workflow</h1>
+            <h2> Describe graphic design of posters, brochures and website </h2>
+        </div>
+        <div class="workAnchor" id="plastics">
+            <h1>Plastic Recycling </h1>
+            <h2> Describe plastic recycing machine.  </h2>
+        </div>
+
+
+
+
+
+</body>
+
+</html>
