@@ -200,57 +200,7 @@ body {
         margin: 0 0 3vh 0;
     }
 
-@media (max-width: 1000px) {
-    .Work-container {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
-    }
 
-    .Work-image {
-        height: 30vw;
-    }
-
-    .Listing-contents h1{
-        font-size: 20px;
-    }
-    .Listing-contents p {
-        font-size: 15px;
-    }
-    .Listing-contents span {
-        font-size: 12px;
-    }
-    .listText {
-        padding-left: 0;
-    }
-
-}
-
-@media (max-width: 500px) {
-    .Work-container {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-    }
-  
-    .name {
-        display: none;
-    }
-
-    .logo {
-        display: block;
-        vertical-align: top;
-    }
-    .cochleaLogo {
-        display: block;
-        vertical-align: top;
-    }
-
-    .Work-image {
-        height: 70vw;
-    }
-    
-}
 #landingHeader {
     height: 100vh;
 
@@ -602,3 +552,63 @@ ul, ol {
     .formBox {
         width: 100%;
     }
+
+
+
+@media (max-width: 1000px) {
+    .Work-container {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+
+    .Work-image {
+        height: 30vw;
+    }
+
+    .Listing-contents h1 {
+        font-size: 20px;
+    }
+
+    .Listing-contents p {
+        font-size: 15px;
+    }
+
+    .Listing-contents span {
+        font-size: 12px;
+    }
+
+    .listText {
+        padding-left: 0;
+    }
+    .heroImage {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .Work-container {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .name {
+        display: none;
+    }
+
+    .logo {
+        display: block;
+        vertical-align: top;
+    }
+
+    .cochleaLogo {
+        display: block;
+        vertical-align: top;
+    }
+
+    .Work-image {
+        height: 70vw;
+    }
+    
+}
