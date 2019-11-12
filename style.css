@@ -299,6 +299,7 @@ ul, ol {
     object-fit: cover;
     padding: 30px 0 30px 0;
     height: 100vh;
+    object-position: 50% 50%;
 }
 .videoFrame {
     width: 100%;
