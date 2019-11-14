@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#top" class="paginationA active"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#hypothesis" class="paginationA"> <span class="hover-text"> Hypothesis</span> </a></li>
+            <li> <a href="#handDesign" class="paginationA"> <span class="hover-text"> Hand Design</span> </a></li>
+            <li> <a href="#material" class="paginationA"> <span class="hover-text"> Materials</span> </a></li>
+            <li> <a href="#experiment" class="paginationA"> <span class="hover-text">Experiment</span> </a></li>
+            <li> <a href="#conclusions" class="paginationA"> <span class="hover-text">Conclusions</span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="top">
+            <div class="workAnchor" id="top">
+                <div>
+                    <h1> Rehapp</h1>
+                    <h2> Using digital healthcare to improve ACL tear recovery. </h2>
+                    <h3> 2018  Group Project with Mar Estrellas Garcia, David Jedeikin, Nate Macabuag, Edward McLaughlin </h3>
+                </div>
+                <img class="heroImage" src="images/Goldfinger/front.jpeg" />
+
+                <h2>
+                    <b>Goldfinger Factory</b> is an award-winning sustainable design social
+                    enterprise.
+                    <br />
+                    <br />
+                    Guided by a passion for circular economy principles
+                    and an inclusive community, Goldfinger Factory combines a bespoke
+                    furniture and interiors business
+                    with a Teaching Academy for less advantaged young people.
+                    <br />
+                    <br />
+                    The joy of working for a small company was the variety of work I
+                    got to take ownership of. I was involved in key operations which included:
+
+
+                </h2>
+            </div>
+            <img class="heroImage" src="images/RRP/rrp.jpg" />
+
+            <h2>
+                The purpose of this research project was to understand robotics
+                <b>research methodology</b>; formulating a hypothesis and carrying out
+                experiments to create valid conclusions.
+                <br />
+                <br />
+                The broader topic of research is in <b>social robotics</b>, the intersection between
+                people and robots.
+                <br />
+                <br />
+                For a more detailed read, including the importance of this research project,
+                please <b>download </b>the full report above.
+            </h2>
+        </div>
+
+
+        <div class="workAnchor" id="hypothesis">
+            <h1>Hypothesis</h1>
+            <h2>
+                A novel robot hand design will significantly improve
+                realism and comfort during a robot-human handshake compared to a baseline robot hand.
+            </h2>
+
+        </div>
+        <div class="workAnchor" id="handDesign">
+            <h1>Hand Design</h1>
+            <h2>
+                The robot hand was designed to build on pre-existing research on
+                grip force, palm compliance, handshaking trajectory, and reaction agility.
+
+                <br />The novel aspect of our design is the use of palm material that could emulate
+                the compliance and texture of the human hand.
+
+            </h2>
+            <div class="subImage">
+                <img src="images/RRP/hand_design.png" />
+                <h3><i>CAD of hand design. Palm area highlighted in blue.</i></h3>
+            </div>
+            <h2>
+                The hand was designed in SOLIDWORKS. The geometry of the hand was based on anthropometric data of the human hand,
+                and designed with internal cavities to include tendons and other features.
+            </h2>
+        </div>
+        <div class="workAnchor" id="material">
+            <h1>Material Selection</h1>
+            <h2>
+                The optimal material to emulate the human palm  had to perform well both in compliance and
+                surface texture.
+            </h2>
+            <div class="subImage">
+                <img src="images/RRP/samples.jpg" />
+                <h3><i>Different materials samples. Coffee, rubber beads, hydrated Polyacrylamide balls, Polystyrene balls (left to right)</i></h3>
+            </div>
+            <h2>
+                A blind experiment was set up to compare different granules. Granular
+                jamming at different pressures was used to vary the hardness of each sample.
+            </h2>
+            <div class="workTwoColumn">
+                <div> <img src="images/RRP/materialExperiment1.png" /> <h3><i>Experimental set-up comparing material samples.</i></h3></div>
+                <div> <img src="images/RRP/materialExperiment2.png" /></div>
+            </div>
+            <h2>Hydrated Polyacrylamide balls were found to be the most realistic material.</h2>
+        </div>
+
+
+        <div class="workAnchor" id="experiment">
+            <h1>Experiment</h1>
+            <h2>
+                In the final experiment the redesigned hand and a rigid design were compared
+                to a real human handshake. Measurements of epidermal activity (EDA) and a questionnaire after
+                the experiment were used to compare the designs for realism and comfort during the interaction.
+            </h2>
+            <div class="subImage">
+                <img src="images/RRP/finaltestuser.PNG" />
+                <h3><i>Main experimental set-up.</i></h3>
+            </div>
+
+        </div>
+        <div class="workAnchor" id="conclusions">
+            <h1>Conclusions</h1>
+            <h2>
+                When compared to a rigid and
+                static hand design, the redesign was found to be significantly
+                more realistic with participants feeling more relaxed during
+                the interaction.
+                <br />
+                <br />
+                Based on the feedback from participants, the design of
+                the hand could have been improved. Many of the participants
+                suggested that the compliant material could have been
+                extended to other areas of the hand such as the fingertips.
+
+            </h2>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
