@@ -45,6 +45,20 @@
 
 
     </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="' + $('#videoPlaceholder').attr('data-video') + '"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+
+
+
+            });
+
+        });
+
+    </script>
 
 </head>
 <body>
@@ -77,118 +91,48 @@
             <img class="heroImage" src="images/Robotics/cover.jpg" />
 
             <h2>
-                <b>70% of patients do not continue rehabilitation outside of a clinical setting.</b>
+                The objective of this project was to teach BAXTER to feed people food. BAXTER 
+                could identify food, scoop it up, identify an open mouth and navigate the food there.
                 <br />
                 <br />
-
-                Rehapp improves ACL rehabilitation by guiding patients to extend and hold
-                their knee joint at the correct angle and duration,
-                in an <b>intuitive </b>and <b>engaging</b> way.
-                <br />
-                <br />
-                <b>Rehapp </b> was awarded with best human centered rehabilitation device in 2018 by
-                the Department of Human Robotics, Bioengineering, Imperial College London.
-
-
-
+                I was involved in the perception part of the project. Using a RGB-D camera and OpenCV 
+                (open source computer vision library) I was able determine the 
+                three dimensional co-ordinates of a mouth and whether it was open or closed.
+                
             </h2>
         </div>
 
         <div class="workAnchor" id="background">
             <h1>Background</h1>
             <h2>
-                The total cost of care for an ACL reconstruction surgery is estimated to have a
-                mean of $13,000 (£11,000) per patient. The postoperative care contributes considerably
-                to this cost.
-                <br />
-                <br />
-                The cost of rehabilitation is not just monetary. Patients are required to see a physiotherapist
-                every 2-3 weeks to assess their recovery.
-                Knowing that the are an estimated 100,000 ACL reconstruction surgeries a year in the US, this has a total
-                cost of 1.5 million man hours to the US economy.
             </h2>
 
-            <div class="subImage">
-                <img src="images/Rehapp/brace.jpg" />
-                <h3><i>Medical standard post operative knee hinge brace.</i></h3>
-            </div>
-
         </div>
-
-        <div class="workAnchor" id="understanding">
-            <h1>Understanding Pain Points</h1>
+        <div class="workAnchor" id="video">
+            <h1>Video</h1>
+            <div class="videoFrame">
+                <img class="playIcon" id="play" src="images/General/playAsset 1.png" />
+                <img class="heroImage" id="videoPlaceholder" src="images/Robotics/cover.jpg" data-video="https://www.youtube.com/embed/CWtSC4k17WE" />
+            </div>
+            <div class="tube"></div>
             <h2>
-                We <b>interviewed patients</b> recovering from ACL surgery and spoke to
-                an orthopaedic registrar.
-                We found vague exercises were prescribed to be performed
-                at home without doctor supervision.
-                <br />
-                <br />
-                Experiencing pain and a <b>lack of quantified progress</b> left patients feeling
-                distressed and <b>unsure</b> about whether they were <b>performing correctly</b>. The result was
-                often an unnecessary return to the hospital.
-                <br />
-                <br />
-                Lack of <b>information exchange </b>between patient and doctor resulted in worry, and time
-                wasted for both the patient and
-                the clinician.
             </h2>
 
         </div>
-        <div class="workAnchor" id="solution">
-            <h1>Solution</h1>
-            <h2> Hero image of sorts</h2>
 
 
-        </div>
-
-        <div class="workAnchor" id="ui">
-            <h1>UI</h1>
-            <h2>
-                The user interface was created using python and integrated with
-                the hardware to create a fully functioning prototype.
-                <br />
-                <br />
-                Patients can choose from a selection of different game formats.
-                <br />
-                <br />
-                The Garden game allows patients to grow their own garden of flowers while performing their
-                knee flexion and extension exercises. This guides them through the movement, making sure they are
-                reaching the correct angle, duration and number of repititions.
-            </h2>
-
+        <div class="workAnchor" id="computerVision">
+            <h1>Computer Vision</h1>
+            <h2>Facial Recognition of face and food</h2>
             <div class="subImage">
-                <img src="images/Rehapp/animatedUI.gif" />
-                <h3><i>Patients control a virtual watering can with their leg angle.</i></h3>
-            </div>
-            <div class="subImage">
-                <img src="images/Rehapp/completedUI.png" />
-                <h3>
-                    <i>
-                        Review page lets patients know how well they performed, how
-                        they could improve and sends feedback straight to their doctor.
-                    </i>
-                </h3>
-            </div>
-            <div class="subImage">
-                <img src="images/Rehapp/graphUI.png" />
-                <h3><i>Track progression over time and share!</i></h3>
+                <img 
             </div>
 
         </div>
 
-
-
-        <div class="workAnchor" id="hardware">
-            <h1>Hardware</h1>
-            <h2>
-                The hardware consists of Adafruit Feather MO Bluefruit LE  micro-controller, two IMUs for measuring
-                the relative angle of the leg, and two haptic motors to provide vibrational feedback to the user.
-
-            </h2>
-            <div class="subImage">
-                <img src="images/Rehapp/fulldevice.png" />
-            </div>
+        <div class="workAnchor" id="motionPlanning">
+            <h1>Motion Planning</h1>
+            <h2>Trajectory planning </h2>
 
         </div>
 
