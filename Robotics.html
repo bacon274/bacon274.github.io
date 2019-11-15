@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#top" class="paginationA active"> <span class="hover-text">Intro</span> </a></li>
+            <li> <a href="#background" class="paginationA"> <span class="hover-text">Background</span> </a></li>
+            <li> <a href="#understanding" class="paginationA"> <span class="hover-text">Understanding Users </span> </a></li>
+            <li> <a href="#ui" class="paginationA"> <span class="hover-text">UI</span> </a></li>
+            <li> <a href="#hardware" class="paginationA"> <span class="hover-text">Hardware</span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="top">
+
+            <div>
+                <h1> Feeding Robot </h1>
+                <h2> Programming BAXTER to feed autonomously. </h2>
+                <h3> 2018  Group Project with Ina Roll Backe, Tilly Supple, Grace Chin and Lydia Dynes-Martinez </h3>
+            </div>
+            <img class="heroImage" src="images/Robotics/cover.jpg" />
+
+            <h2>
+                <b>70% of patients do not continue rehabilitation outside of a clinical setting.</b>
+                <br />
+                <br />
+
+                Rehapp improves ACL rehabilitation by guiding patients to extend and hold
+                their knee joint at the correct angle and duration,
+                in an <b>intuitive </b>and <b>engaging</b> way.
+                <br />
+                <br />
+                <b>Rehapp </b> was awarded with best human centered rehabilitation device in 2018 by
+                the Department of Human Robotics, Bioengineering, Imperial College London.
+
+
+
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="background">
+            <h1>Background</h1>
+            <h2>
+                The total cost of care for an ACL reconstruction surgery is estimated to have a
+                mean of $13,000 (£11,000) per patient. The postoperative care contributes considerably
+                to this cost.
+                <br />
+                <br />
+                The cost of rehabilitation is not just monetary. Patients are required to see a physiotherapist
+                every 2-3 weeks to assess their recovery.
+                Knowing that the are an estimated 100,000 ACL reconstruction surgeries a year in the US, this has a total
+                cost of 1.5 million man hours to the US economy.
+            </h2>
+
+            <div class="subImage">
+                <img src="images/Rehapp/brace.jpg" />
+                <h3><i>Medical standard post operative knee hinge brace.</i></h3>
+            </div>
+
+        </div>
+
+        <div class="workAnchor" id="understanding">
+            <h1>Understanding Pain Points</h1>
+            <h2>
+                We <b>interviewed patients</b> recovering from ACL surgery and spoke to
+                an orthopaedic registrar.
+                We found vague exercises were prescribed to be performed
+                at home without doctor supervision.
+                <br />
+                <br />
+                Experiencing pain and a <b>lack of quantified progress</b> left patients feeling
+                distressed and <b>unsure</b> about whether they were <b>performing correctly</b>. The result was
+                often an unnecessary return to the hospital.
+                <br />
+                <br />
+                Lack of <b>information exchange </b>between patient and doctor resulted in worry, and time
+                wasted for both the patient and
+                the clinician.
+            </h2>
+
+        </div>
+        <div class="workAnchor" id="solution">
+            <h1>Solution</h1>
+            <h2> Hero image of sorts</h2>
+
+
+        </div>
+
+        <div class="workAnchor" id="ui">
+            <h1>UI</h1>
+            <h2>
+                The user interface was created using python and integrated with
+                the hardware to create a fully functioning prototype.
+                <br />
+                <br />
+                Patients can choose from a selection of different game formats.
+                <br />
+                <br />
+                The Garden game allows patients to grow their own garden of flowers while performing their
+                knee flexion and extension exercises. This guides them through the movement, making sure they are
+                reaching the correct angle, duration and number of repititions.
+            </h2>
+
+            <div class="subImage">
+                <img src="images/Rehapp/animatedUI.gif" />
+                <h3><i>Patients control a virtual watering can with their leg angle.</i></h3>
+            </div>
+            <div class="subImage">
+                <img src="images/Rehapp/completedUI.png" />
+                <h3>
+                    <i>
+                        Review page lets patients know how well they performed, how
+                        they could improve and sends feedback straight to their doctor.
+                    </i>
+                </h3>
+            </div>
+            <div class="subImage">
+                <img src="images/Rehapp/graphUI.png" />
+                <h3><i>Track progression over time and share!</i></h3>
+            </div>
+
+        </div>
+
+
+
+        <div class="workAnchor" id="hardware">
+            <h1>Hardware</h1>
+            <h2>
+                The hardware consists of Adafruit Feather MO Bluefruit LE  micro-controller, two IMUs for measuring
+                the relative angle of the leg, and two haptic motors to provide vibrational feedback to the user.
+
+            </h2>
+            <div class="subImage">
+                <img src="images/Rehapp/fulldevice.png" />
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
