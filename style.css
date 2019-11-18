@@ -419,7 +419,7 @@ ul, ol {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30vw;
+    width: 35vw;
     height:100%;
     
 }
@@ -431,7 +431,7 @@ ul, ol {
     }
 
 .slick-slide {
-    margin: 10px;
+    margin: 0 60px 0 60px;
 }
 
     .slick-slide img {
@@ -575,7 +575,13 @@ ul, ol {
         object-fit: cover;
     }
     .posterCarousel {
-        width: 50vw;
+        width: 80vw;
+    }
+    .prev-arrow{
+        visibility:hidden;
+    }
+    .next-arrow {
+        visibility: hidden;
     }
 
 @media (max-width: 500px) {
