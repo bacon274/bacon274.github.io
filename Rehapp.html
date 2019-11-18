@@ -45,6 +45,20 @@
 
 
     </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="' + $('#videoPlaceholder').attr('data-video') + '"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+
+
+
+            });
+
+        });
+
+    </script>
 
 </head>
 <body>
@@ -62,9 +76,9 @@
         <ul class="pagination">
             <li> <a href="#top" class="paginationA active"> <span class="hover-text">Intro</span> </a></li>
             <li> <a href="#background" class="paginationA"> <span class="hover-text">Background</span> </a></li>
-            <li> <a href="#understanding" class="paginationA"> <span class="hover-text">Understanding Users </span> </a></li>
+            <li> <a href="#understanding" class="paginationA"> <span class="hover-text">Pain Points </span> </a></li>
+            <li> <a href="#solution" class="paginationA"> <span class="hover-text"> Solution </span> </a></li>
             <li> <a href="#ui" class="paginationA"> <span class="hover-text">UI</span> </a></li>
-            <li> <a href="#hardware" class="paginationA"> <span class="hover-text">Hardware</span> </a></li>
 
         </ul>
         <div class="workAnchor" id="top">
@@ -74,7 +88,7 @@
                     <h2> Novel joint rehabilitation aid to improve patient outcomes post ACL reconstruction surgery. </h2>
                     <h3> 2018  Group Project with Mar Estrellas Garcia, David Jedeikin, Nate Macabuag, Edward McLaughlin </h3>
                 </div>
-                <img class="heroImage" src="images/Rehapp/sketch_1.png" />
+                <img class="heroImage" src="images/Rehapp/cover_large.jpg" />
 
                 <h2>
                     <b>70% of patients do not continue rehabilitation outside of a clinical setting.</b>
@@ -88,6 +102,9 @@
                     <br />
                     <b>Rehapp </b> was awarded with best human centered rehabilitation device in 2018 by
                     the Department of Human Robotics, Bioengineering, Imperial College London.
+                    <br />
+                    <br />
+                    I was responsible for the app, UI and gameplay as well as integrating the hardware and software together.
 
 
 
@@ -137,63 +154,64 @@
             </div>
             <div class="workAnchor" id="solution">
                 <h1>Solution</h1>
-                <h2> Hero image of sorts</h2>
 
+                <div class="workTwoColumn">
+                    <div><img src="images/Rehapp/fulldevice.png" /></div>
+                    <div> <img src="images/Rehapp/homeUI.png" /></div>
+                </div>
 
-            </div>
-
-            <div class="workAnchor" id="ui">
-                <h1>UI</h1>
                 <h2>
-                    The user interface was created using python and integrated with
-                    the hardware to create a fully functioning prototype.
-                    <br />
-                    <br />
-                    Patients can choose from a selection of different game formats.
-                    <br />
-                    <br />
-                    The Garden game allows patients to grow their own garden of flowers while performing their
-                    knee flexion and extension exercises. This guides them through the movement, making sure they are
-                    reaching the correct angle, duration and number of repititions.
+                    Rehapp is a wearable device that measures leg angle and guides patients
+                    through physiotherapy with haptic feedback and through engaging games
+                    on an app.
                 </h2>
+                
+                    <div class="videoFrame">
+                        <img class="playIcon" id="play" src="images/General/playAsset 1.png" />
+                        <img class="heroImage" id="videoPlaceholder" src="images/Rehapp/cover_large.jpg" data-video="https://www.youtube.com/embed/aXwiwWS7wVg?rel=0&showinfo=0&autohide=1&modestbranding=1&autoplay=1" />
+                    </div>
+                    <div class="tube"></div>
 
-                <div class="subImage">
-                    <img src="images/Rehapp/animatedUI.gif" />
-                    <h3><i>Patients control a virtual watering can with their leg angle.</i></h3>
+                <div class="workAnchor" id="ui">
+                    <h1>UI</h1>
+                    <h2>
+                        The user interface was created using python and integrated with
+                        the hardware to create a fully functioning prototype.
+                        <br />
+                        <br />
+                        Patients can choose from a selection of different game formats.
+                        <br />
+                        <br />
+                        The Garden game allows patients to grow their own garden of flowers while performing their
+                        knee flexion and extension exercises. This guides them through the movement, making sure they are
+                        reaching the correct angle, duration and number of repititions.
+                    </h2>
+
+                    <div class="subImage">
+                        <img src="images/Rehapp/animatedUI.gif" />
+                        <h3><i>Patients control a virtual watering can with their leg angle.</i></h3>
+                    </div>
+                    <div class="subImage">
+                        <img src="images/Rehapp/completedUI.png" />
+                        <h3>
+                            <i>
+                                Review page lets patients know how well they performed, how
+                                they could improve and sends feedback straight to their doctor.
+                            </i>
+                        </h3>
+                    </div>
+                    <div class="subImage">
+                        <img src="images/Rehapp/graphUI.png" />
+                        <h3><i>Track progression over time and share!</i></h3>
+                    </div>
+
                 </div>
-                <div class="subImage">
-                    <img src="images/Rehapp/completedUI.png" />
-                    <h3>
-                        <i>
-                            Review page lets patients know how well they performed, how
-                            they could improve and sends feedback straight to their doctor.
-                        </i>
-                    </h3>
-                </div>
-                <div class="subImage">
-                    <img src="images/Rehapp/graphUI.png" />
-                    <h3><i>Track progression over time and share!</i></h3>
-                </div>
+
+
+
+
 
             </div>
-
-
-
-            <div class="workAnchor" id="hardware">
-                <h1>Hardware</h1>
-                <h2>
-                    The hardware consists of Adafruit Feather MO Bluefruit LE  micro-controller, two IMUs for measuring 
-                    the relative angle of the leg, and two haptic motors to provide vibrational feedback to the user.
- 
-                </h2>
-                <div class="subImage">
-                    <img src="images/Rehapp/fulldevice.png" />
-                </div>
-
-            </div>
-
-
-        </div>
 
 
 </body>
