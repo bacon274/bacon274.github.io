@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script language="JavaScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            projects = document.getElementsByClassName('Work-Listing');
+
+            for (var i = 0; i < projects.length; i++) {
+                alert(projects[i].text());
+
+            };
+
+
+        });
+    </script>
 </head>
 <body>
     <header id="landingHeader">

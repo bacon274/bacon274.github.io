@@ -415,8 +415,57 @@ ul, ol {
 .subImage img {
     width: 100%;
 }
+.posterCarousel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    height:100%;
+    
+}
+    .posterCarousel .item {
+        opacity: 0.5;
+    }
+    .posterCarousel .item.slick-active {
+        opacity: 1;
+    }
 
+.slick-slide {
+    margin: 10px;
+}
 
+    .slick-slide img {
+        width: 100%;
+       
+    }
+
+.prev-arrow {
+    width: 20px;
+    height: 20px;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: -40px;
+    -webkit-transform: rotate(135deg);
+    background-color: transparent;
+    outline: none;
+}
+
+.next-arrow {
+    width: 20px;
+    height: 20px;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    right: -40px;
+    -webkit-transform: rotate(-45deg);
+    background-color: transparent;
+    outline: none;
+}
 
 /*
 .projectHeader {
@@ -525,7 +574,9 @@ ul, ol {
         height: 50vw;
         object-fit: cover;
     }
-}
+    .posterCarousel {
+        width: 50vw;
+    }
 
 @media (max-width: 500px) {
     .workMainBody h1 {
