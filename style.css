@@ -96,6 +96,8 @@ body {
     filter: invert(100%);
 }
 
+
+
 .name {
 }
 
@@ -213,24 +215,29 @@ footer {
     position: relative;
     margin: 0px 12.5% 0px 12.5%;
     display: flex;
-    flex-direction: row;
+    
     justify-content: space-between;
 }
 .footer-section{
     position: relative;
-    width:25vw;
+    width: 100%;
 }
 .footer-section-contents {
-    position:absolute;
-    left: 50%;
+    position: absolute;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateY(-50%);
+}
+.footer-section-right {
+    position: absolute;
+    right: 0%;
 }
 .up-Arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
     width: 20px;
     height: 20px;
-    position: absolute;
-    
     border: solid black;
     border-width: 0 1px 1px 0;
     -webkit-transform: rotate(-135deg);
@@ -310,7 +317,7 @@ ul, ol {
 
 
 .workMainBody {
-    position: absolute;
+    position: relative;
     margin: 30px 12.5% 0 12.5%;
 }
     .workMainBody h1 {
