@@ -373,6 +373,7 @@ ul, ol {
     .downloadCV:hover {
         font-weight: bolder;
     }
+
 @keyframes fadein{
     from {
         opacity: 0;
