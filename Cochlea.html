@@ -45,6 +45,20 @@
 
 
     </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="' + $('#videoPlaceholder').attr('data-video') + '"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+
+
+
+            });
+
+        });
+
+    </script>
 
 </head>
 <body class="cochlea">
@@ -62,36 +76,71 @@
     <div class="workMainBody">
         <ul class="pagination" ;>
             <li> <a href="#intro" class="paginationA active" style="color:white"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#what" class="paginationA" style="color:white"> <span class="hover-text"> What is it? </span> </a></li>
             <li> <a href="#video" class="paginationA" style="color:white"> <span class="hover-text"> Video </span> </a></li>
+            <li> <a href="#responsibilities" class="paginationA" style="color:white"> <span class="hover-text"> Responsibility </span> </a></li>
 
         </ul>
         <div class="workAnchor" id="intro">
             <img class="heroImage" style=" object-fit: contain;" src="images/Cochlea/webreadyzoom.png" />
             <div>
-                <h1> Cochlea </h1>
+                <h1>Cochlea </h1>
                 <h2>Visualising the functionality of the ear.</h2>
                 <h3> 2018 - Group Project with Anna Bernbuam, Benedict Greenburg, Benjamin Pheipher, Shivam Bhatnagar and Lidia Dynes-Martinez</h3>
                 <h3> Special thanks to <i>Abbey Road Studios</i> and <i>Reactify Music</i> for their support and input throughout the project.</h3>
             </div>
 
+        </div>
 
+        <div class="workAnchor" id="what">
+           <h1>What is it?</h1>
             <h2>
+               
+                The Cochlea is part of the physiology of the human <b>hearing system</b> that
+                converts <b>mechanical vibration</b> into <b>electrical impulses</b> to be sent
+                to the brain.
+                <br />
+                <br />
+                This installation creates a visualisation of this auditory phenomenon and
+                demonstrates the effects of hearing loss.
             </h2>
         </div>
         <div class="workAnchor" id="video">
             <h1>Video</h1>
 
-            <iframe class="heroImage" width="1280" height="720" src="https://www.youtube.com/embed/AFJyFwYWYFE?rel=0&showinfo=0&autohide=1&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="videoFrame">
+                <img class="playIcon" id="play" src="images/General/playAsset 1.png" />
+                <img class="heroImage" id="videoPlaceholder" src="images/Cochlea/IMG_1790.JPG" data-video="https://www.youtube.com/embed/AFJyFwYWYFE?rel=0&showinfo=0&autohide=1&modestbranding=1" />
+            </div>
+            <div class="tube"></div>
 
         </div>
-
+        <div class="workAnchor" id="responsibilities">
+            <h1>My Responsibility</h1>
+            <h2>
+                I worked on the visual programming language Max in order to analyse
+                the waveform.
+                <br />
+                <br />
+                I used a fourier transform to decompose the sound wave into
+                its constituent frequency bands.
+                <br />
+                <br />
+                I then encoded a message that contained the intensity of each frequency
+                band. This message was communicated via a serial port and interpreted by
+                Arduino.
+                <br />
+                <br />
+                I was also responsible for part of physical build of the prototype. 
+            </h2>
+        </div>
 
 
     </div>
     <footer>
         <div class="footer-section">
             <div class="footer-section-contents">
-                <h3>© Jacob Mitchell</h3>
+                <h3>&copy; Jacob Mitchell</h3>
             </div>
         </div>
         <div class="footer-section">
