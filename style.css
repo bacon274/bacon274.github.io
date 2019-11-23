@@ -265,6 +265,10 @@ footer {
 .social-media-logo {
     width: 3vw;
 }
+.invert {
+    filter: invert(100%);
+}
+
 .pagination {
     position: fixed;
     right: 20px;
@@ -617,13 +621,16 @@ ul, ol {
     object-fit: cover;
 }
  */
+
 @media (max-width: 1000px) {
     .workMainBody h1 {
         font-size: 40px;
     }
+
     .workMainBody h2 {
         font-size: 30px;
     }
+
     .workMainBody h3 {
         font-size: 20px;
     }
@@ -644,123 +651,19 @@ ul, ol {
         height: 50vw;
         object-fit: cover;
     }
+
     .posterCarousel {
         width: 80vw;
     }
-    .prev-arrow{
-        visibility:hidden;
+
+    .prev-arrow {
+        visibility: hidden;
     }
+
     .next-arrow {
         visibility: hidden;
     }
 
-@media (max-width: 500px) {
-    .workMainBody h1 {
-        font-size: 30px;
-    }
-
-    .workMainBody h2 {
-        font-size: 20px;
-    }
-
-    .workMainBody h3 {
-        font-size: 15px;
-    }
-
-    .projectHeader {
-        position: relative;
-        width: 100%;
-        top: 0;
-        left: 0px;
-    }
-
-    .problemDefinitionContainer {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
- 
-    }
-    .workTwoColumn {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-    }
-
-    .subImage{
-        width: 100%;
-    }
-    .downloadIconContainer {
-        position: relative;
-        top: 0;
-        right: 10px;
-        
-       
-       
-        
-    }
-    .downloadIcon {
-        
-        -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-        -moz-transform: scale(0.5); /* FF3.5+ */
-        -ms-transform: scale(0.5); /* IE9 */
-        -o-transform: scale(0.5); /* Opera 10.5+ */
-        transform: scale(0.5);
-    }
-    .workTitle {
-        width: 100%;
-    }
-
-}
-
- 
-
-
-    @media (max-width: 700px) {
-        .aboutLanding {
-            -webkit-column-count: 1;
-            -moz-column-count: 1;
-            column-count: 1;
-        }
-
-        .emailColumns {
-            -webkit-column-count: 1;
-            -moz-column-count: 1;
-            column-count: 1;
-        }
-
-        .aboutElement {
-            height: 50vw;
-        }
-    }
-
-    #contact {
-        margin: 130px 12.5% 0 12.5%;
-    }
-
-
-    .contactContainer {
-        height: 100vh;
-        margin: 0 12.5% 0 12.5%;
-    }
-
-    .emailColumns {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
-    }
-
-    .form {
-        width: 100%;
-        padding-top: 130px;
-    }
-
-    .formBox {
-        width: 100%;
-    }
-
-
-
-@media (max-width: 1000px) {
     .Work-container {
         -webkit-column-count: 2;
         -moz-column-count: 2;
@@ -786,12 +689,69 @@ ul, ol {
     .listText {
         padding-left: 0;
     }
+
     .heroImage {
         height: 50vh;
     }
+    .playIcon {
+        height: 50%;
+    }
+    
 }
 
 @media (max-width: 500px) {
+    .workMainBody h1 {
+        font-size: 30px;
+    }
+
+    .workMainBody h2 {
+        font-size: 20px;
+    }
+
+    .workMainBody h3 {
+        font-size: 15px;
+    }
+
+    .projectHeader {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0px;
+    }
+
+    .problemDefinitionContainer {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .workTwoColumn {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .subImage {
+        width: 100%;
+    }
+
+    .downloadIconContainer {
+        position: relative;
+        top: 0;
+        right: 10px;
+    }
+
+    .downloadIcon {
+        -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+        -moz-transform: scale(0.5); /* FF3.5+ */
+        -ms-transform: scale(0.5); /* IE9 */
+        -o-transform: scale(0.5); /* Opera 10.5+ */
+        transform: scale(0.5);
+    }
+
+    .workTitle {
+        width: 100%;
+    }
     .Work-container {
         -webkit-column-count: 1;
         -moz-column-count: 1;
@@ -815,9 +775,74 @@ ul, ol {
     .Work-image {
         height: 70vw;
     }
-    
+
     .paginationA:hover .hover-text {
         opacity: 0;
     }
+
+    #copyright {
+        display: none;
+    }
+
+    #back-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0%,-56%)
+    }
+    .social-media-logo {
+        width: 8vw;
+    }
     
 }
+
+
+@media (max-width: 700px) {
+    .aboutLanding {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .emailColumns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .aboutElement {
+        height: 50vw;
+    }
+
+    .social-media-logo {
+        width: 5vw;
+    }
+   
+}
+
+#contact {
+    margin: 130px 12.5% 0 12.5%;
+}
+
+
+.contactContainer {
+    height: 100vh;
+    margin: 0 12.5% 0 12.5%;
+}
+
+.emailColumns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+.form {
+    width: 100%;
+    padding-top: 130px;
+}
+
+.formBox {
+    width: 100%;
+}
+
