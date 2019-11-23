@@ -704,6 +704,29 @@ ul, ol {
     
 }
 
+
+@media (max-width: 700px) {
+    .aboutLanding {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .emailColumns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+    .aboutElement {
+        height: 50vw;
+    }
+
+    .social-media-logo {
+        width: 5vw;
+    }
+   
+}
 @media (max-width: 500px) {
     .workMainBody h1 {
         font-size: 30px;
@@ -757,6 +780,7 @@ ul, ol {
     .workTitle {
         width: 100%;
     }
+
     .Work-container {
         -webkit-column-count: 1;
         -moz-column-count: 1;
@@ -796,35 +820,13 @@ ul, ol {
         left: 0;
         transform: translate(0%,-56%)
     }
+
     .social-media-logo {
         width: 8vw;
     }
-    
 }
 
 
-@media (max-width: 700px) {
-    .aboutLanding {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-    }
-
-    .emailColumns {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-    }
-
-    .aboutElement {
-        height: 50vw;
-    }
-
-    .social-media-logo {
-        width: 5vw;
-    }
-   
-}
 
 #contact {
     margin: 130px 12.5% 0 12.5%;
