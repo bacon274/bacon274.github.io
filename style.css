@@ -149,16 +149,21 @@ body {
     bottom: 0;
     color: #000;
     visibility: hidden;
-    padding: 50% 0 10% 10%;
+    padding: 50% 10% 10% 10%;
 }
 
 .Work-Listing span {
     font-size: 15px;
     color: white;
     background-color: black /* rgb(254,138,113)*/;
+    border-radius: 4px;
     padding: 0 2px 0 2px;
     margin-right: 10px;
     margin-bottom: 0px;
+}
+
+.Work-Listing p{
+    font-weight: bolder;
 }
 
 
