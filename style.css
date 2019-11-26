@@ -4,7 +4,22 @@
 
 body {
     font-family: proxima-nova, Arial;
+    font-style: normal;
+   
+   
 }
+    body h1 {
+        font-weight: 600;
+    }
+    body h2 {
+       
+    }
+    body h3 {
+        font-weight: 600;
+    }
+    body p {
+        font-weight: 600;
+    }
 
 .cochlea{
     background-color: black; 
@@ -14,7 +29,7 @@ body {
 .dynamicHeaderContainer {
     position: absolute;
     top: 50%;
-    margin-top: 12.5px;
+    transform: translateY(-50%);
     left: 12.5vw;
     display: flex;
     justify-content: left;
@@ -23,8 +38,10 @@ body {
 #dynamicHeader {
     height: 25px;
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 300;
     text-transform: lowercase;
+    
+    white-space: nowrap;
 }
 
 @keyframes blinkAnimation {
@@ -51,13 +68,25 @@ body {
 .menu-text {
     text-decoration: none;
     text-transform: lowercase;
+    
 }
 
     .menu-text span {
+        width:150%;
         line-height: 130px;
         font-size: 25px;
         color: black;
     }
+
+    .menu-text:hover {
+        text-shadow: 0px 0px 1px black;
+        border-bottom: 4.5px solid black;
+    }
+
+.menu:visited {
+    text-decoration: none;
+    color: black;
+}
 
 .cochleaMenuText {
     text-decoration: none;
@@ -70,7 +99,7 @@ body {
         color: white;
     }
     .cochleaMenuText:hover {
-        font-weight: bolder;
+        text-shadow: 0px 0px 2px white;
         border-bottom: 4.5px solid white;
     }
 .menu-container {
@@ -101,15 +130,7 @@ body {
 .name {
 }
 
-.menu-text:hover {
-    font-weight: bolder;
-    border-bottom: 4.5px solid black;
-}
 
-.menu:visited {
-    text-decoration: none;
-    color: black;
-}
 
 .down-Arrow {
     width: 20px;
@@ -162,9 +183,6 @@ body {
     margin-bottom: 0px;
 }
 
-.Work-Listing p{
-    font-weight: bolder;
-}
 
 
 .Work-Listing:hover .Listing-contents {
@@ -227,10 +245,12 @@ footer {
     position: relative;
     width: 100%;
 }
+
 .footer-section-contents {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    
 }
 .footer-section-right {
     position: absolute;
@@ -262,7 +282,7 @@ footer {
     height: 10px;
     display: block;
     border: 1px solid;
-    border-width: 0 1px 1px 0;
+    border-width: 0 2px 2px 0;
     content: '';
     margin: auto;
     -webkit-transform: rotate(-225deg);
@@ -359,10 +379,12 @@ ul, ol {
     }
     .workMainBody h3 {
         font-size: 20px;
-        font-weight: lighter;
+        font-weight: 100;
     }
 
-
+#intro h1 {
+    font-weight: 600;
+}
 .workTitle{
     width: 80%;
 }
@@ -701,6 +723,10 @@ ul, ol {
     .playIcon {
         height: 50%;
     }
+    #dynamicHeader {
+
+        font-size: 50px;
+    }
     
 }
 
@@ -725,8 +751,12 @@ ul, ol {
     .social-media-logo {
         width: 5vw;
     }
+    #dynamicHeader {
+        font-size: 40px;
+    }
    
 }
+
 @media (max-width: 500px) {
     .workMainBody h1 {
         font-size: 30px;
@@ -823,6 +853,24 @@ ul, ol {
 
     .social-media-logo {
         width: 8vw;
+    }
+    #dynamicHeader {
+        font-size: 30px;
+    }
+}
+@media (max-width: 400px){
+    #dynamicHeader {
+        font-size: 25px;
+    }
+}
+@media (max-width: 350px){
+    #dynamicHeader {
+        font-size: 20px;
+    }
+}
+@media (min-width: 1000px){
+    #dynamicHeader{
+        font-size: 50px;
     }
 }
 
