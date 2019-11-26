@@ -648,7 +648,19 @@ ul, ol {
     object-fit: cover;
 }
  */
+@media (max-width: 1200px) {
+    .Listing-contents h1 {
+        font-size: 20px;
+    }
 
+    .Listing-contents p {
+        font-size: 15px;
+    }
+
+    .Listing-contents span {
+        font-size: 12px;
+    }
+}
 @media (max-width: 1000px) {
     .workMainBody h1 {
         font-size: 40px;
@@ -754,6 +766,9 @@ ul, ol {
     #dynamicHeader {
         font-size: 40px;
     }
+    .Listing-contents p {
+        font-size: 10px;
+    }
    
 }
 
@@ -816,6 +831,12 @@ ul, ol {
         -moz-column-count: 1;
         column-count: 1;
     }
+    .Listing-contents p {
+        font-size: 12px;
+    }
+    .Listing-contents h1 {
+        font-size: 30px;
+    }
 
     .name {
         display: none;
@@ -852,10 +873,13 @@ ul, ol {
     }
 
     .social-media-logo {
-        width: 8vw;
+        width: 6vw;
     }
     #dynamicHeader {
         font-size: 30px;
+    }
+    #index-copyright {
+       visibility:hidden;
     }
 }
 @media (max-width: 400px){
