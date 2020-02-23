@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="' + $('#videoPlaceholder').attr('data-video') + '"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+
+
+
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#intro" class="paginationA active"> <span class="hover-text">Intro</span> </a></li>
+            <li> <a href="#background" class="paginationA"> <span class="hover-text">Background</span> </a></li>
+            <li> <a href="#system" class="paginationA"> <span class="hover-text">Set-up </span> </a></li>
+            <li> <a href="#hardware" class="paginationA"> <span class="hover-text">Hardware</span> </a></li>
+            <li> <a href="#app" class="paginationA"> <span class="hover-text"> System </span> </a></li>
+            <li> <a href="#backEnd" class="paginationA"> <span class="hover-text">Back End</span> </a></li>
+            <li> <a href="#processing" class="paginationA"> <span class="hover-text">Processing</span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="intro">
+
+            <div>
+                <h1> VitaRun</h1>
+                <h2> Machine learning and mobile healthcare </h2>
+                <h3> 2019 - Group Project with Jonny Midgen, Alex Gourlay, Benjamin Pheipher, Wesley Norbert, Kenza Zouitene <br />and Luidmila Zudina  </h3>
+            </div>
+            <div class="downloadIconContainer">
+                <a target="_blank" style="color:black; text-decoration:none;" href="images/Vitarun/MHML_Final_Report.pdf" download>
+                    <img class="downloadIcon" src="images/General/download.png" />
+                    <h3 class="downloadIconText"><i>download <br />report</i></h3>
+                </a>
+            </div>
+            <img class="heroImage" src="images/Vitarun/1x/logoAsset 3.png" />
+
+            <h2>
+
+                <b>VitaRun</b> monitors <b>selected gait features</b> of a runner through force sensors
+                and an IMU (Inertial Measurement Unit) embedded in an
+                insole, and provides <b>live actionable feedback </b>during the run.
+                <br />
+                <br />
+                It also provides <b>insights</b> derived from this data and keep a
+                <b>history of runs</b>, allowing the user to observe personal trends.
+
+                <br />
+                <br />
+                My personal contribution to the project was app development, backend communication and data visualisation.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="background">
+            <h1>Background</h1>
+            <h2>
+                Running is the <b>most popular sport activity</b> in the UK. However, running injuries affect
+                <b>1 in 4 amateurs</b>.
+                <br />
+                <br />
+                Running <b>gait and style </b> is a factor that runners can control to reduce the <b>risk of injury</b>.
+                <br />
+                <br />
+                Based on research and interviews with a specialist kinesiologist, the following features were selected:
+                <br />
+
+            </h2>
+
+
+            <img style="width: 100%;" src="images/Vitarun/1x/measureAsset 1.png" />
+
+        </div>
+        <div class="workAnchor" id="system">
+            <h1>System</h1>
+
+            <h2>
+                During a run, data from the insole sensors is communicated to the VitaRun app via Bluetooth low energy (BLE).
+                The app sends the data to the server where it is analysed. The results of the analysis and tailored reccomendations
+                are returned to the app where audio and visual feedback is returned live.
+                <br />
+                <br />
+                Historical data is also made available to monitor progress.
+            </h2>
+
+            <div class="subImage">
+                <img src="images/Vitarun/System.jpeg" />
+                <h3><i>System Overview. </i></h3>
+            </div>
+        </div>
+
+        <div class="workAnchor" id="hardware">
+            <h1>Hardware</h1>
+            <h2>
+                The sensing element of the system was performed by
+                a pair of ’Stridalyzer’ smart insoles, purchased from the
+                manufacturer Retisense. Each insole contained
+                8 pressure sensors and a 6 axis IMU.
+            </h2>
+            <div class="subImage">
+                <img src="images/Vitarun/insole.png" />
+                <h3><i>Insole sensors </i></h3>
+            </div>
+            <h2>
+
+                The data from these sensors were streamed to the app using BLE.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="app">
+            <h1>App</h1>
+
+            <h2>
+                App Architecture: The app was developed in Android
+                Studio and constructed in separate modules called
+                ’fragments’ which each provided a core UI function.
+                <br />
+                <br />
+                This architecture
+                allowed team members to work individually on components
+                without editing the same scripts concurrently.
+                <br />
+                <br />
+
+
+                UI Design: The context of use, the intuitiveness and
+                ease of implementation were considered during the design
+                of the User Interface (UI). An initial mock up was made
+                to describe the app flow from a users perspective and to
+                predetermine the app architecture that was implemented in
+                Android Studio. The app wireframes were developed using
+                AdobeXd which allowed for dynamic prototyping.
+
+
+            </h2>
+            <div class="workTwoColumn">
+                <div><img src="images/Vitarun/1x/appAsset 1.png" /></div>
+                <div><img src="images/Vitarun/1x/appAsset 3.png" /></div>
+            </div>
+        </div>
+        <h2>
+            Feedback: Every 15
+            seconds, the Recommendations Fragment requests the data
+            from the server, it then passes the string to a method that
+            takes the string and updates the VitaRun UI to give live
+            recommendations to the runner. The audio feedback is a
+            cut-down version of the method with only the stride length
+            recommendations being read out every 4 minutes by a textto-
+            speech converter. The aim is to inform the user during
+            their run and not distract them. The audio feature transfers
+            the interesting information to the user without needing them
+            to stop to get access to the stride length recommendation.
+            <br />
+            <br />
+            Data Visualisation: Part of the user feedback is a
+            visualisation of historic runs. This feature is a useful tool
+            that allows the observation of trends in pronation over
+            time, monitoring the progression of the condition and the
+            effectiveness of intervention.
+        </h2>
+
+
+        <div class="workAnchor" id="backEnd">
+            <h1>Back End</h1>
+            <h2>
+                The back end tasks can be categorised into user profiles
+                management, signal processing and pronation type classification.
+                They are performed on the server. The server was written
+                in Python and communicated with the mobile application
+                through a RESTful (Representational State Transfer) API.
+                Each buffer of samples is sent in JSON format from the app
+                to the server via a POST method. The server then computes
+                the step frequency of the current buffer, and accumulates a
+                longer secondary buffer of data which is used for dividing
+                samples into steps and identifying the pronation type. GET
+                requests are then used to return data as JSON files to
+                the application. The server was local, which made it only
+                accessible from within the same Wi-Fi network.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="processing">
+            <h1>Signal Processing</h1>
+            <h2>
+
+                Machine learning was used to identify pronation type live using
+                from the insole data.
+
+                Each step of a run is
+                classified as ”normal”, ”over” or ”under” pronation types.
+                Classification is performed by an LSTM (Long Short-Term
+                Memory) RNN (Recurrent Neural Network), trained on data from the insoles.
+
+                <br />
+                <br />
+
+                Step Frequency was calculated using a fast fourier transform (FFT).
+
+                <br />
+                <br />
+                Impact Force was calculated directly from the force sensors.
+
+
+            </h2>
+
+        </div>
+
+        <div class="workAnchor" id="conclusion">
+            <h1>Conclusion</h1>
+            <h2>
+                In conclusion, this project has successfully designed a
+                mobile application to help amateur runners prevent injuries
+                by giving feedback on their gait and stride frequency. This
+                feedback is given given before, during and after the run.
+                The system includes insoles, the android application and the
+                server.
+                VitaRun’s future work includes including traditional features
+                that competitor running applications have, for example
+                distance travelled and GPS tracking of running path. As well
+                as making all information inside VitaRun asymmetrically
+                encrypted. These two features will enable VitaRun to be a
+                more complete product for all runners.
+
+
+            </h2>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <footer>
+        <div class="footer-section" id="copyright">
+            <div class="footer-section-contents">
+                <h3> &copy; Jacob Mitchell</h3>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div>
+                <a id="back-text" style="color:black; text-decoration:none;" href="index.html#work"><h3> back to projects</h3></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="footer-section-contents footer-section-right">
+                <a target="_blank" href="https://www.linkedin.com/in/jacob-mitchell/"><img class="social-media-logo" src="images/General/1x/smAsset 1.png" /></a>
+                <a target="_blank" href="https://github.com/bacon274"><img class="social-media-logo" src="images/General/1x/smAsset 2.png" /></a>
+                <a target="_blank" href="mailto:jacob.fintan.mitchell@gmail.com"><img class="social-media-logo" src="images/General/1x/smAsset 3.png" /></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

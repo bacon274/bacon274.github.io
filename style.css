@@ -130,7 +130,10 @@ body {
 .name {
 }
 
-
+.allWork {
+    position: absolute;
+    left: 50%;
+}
 
 .down-Arrow {
     width: 20px;
@@ -161,6 +164,7 @@ body {
     width: 100%;
     position: relative;
 }
+
 
 
 .Listing-contents {
@@ -381,7 +385,9 @@ ul, ol {
         font-size: 20px;
         font-weight: 100;
     }
-
+.notBold{
+    font-weight:normal;
+}
 #intro h1 {
     font-weight: 600;
 }
@@ -708,7 +714,11 @@ ul, ol {
         -moz-column-count: 2;
         column-count: 2;
     }
-
+    .problemDefinitionContainer {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
     .Work-image {
         height: 30vw;
     }

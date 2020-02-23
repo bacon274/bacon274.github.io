@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="' + $('#videoPlaceholder').attr('data-video') + '"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+
+
+
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
+            <a href="index.html" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
+            <a class="menu-text" href="about.html"> <span> about </span> </a>
+        </section>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#intro" class="paginationA active"> <span class="hover-text">Intro</span> </a></li>
+            <li> <a href="#background" class="paginationA"> <span class="hover-text">Background</span> </a></li>
+            <li> <a href="#setUp" class="paginationA"> <span class="hover-text">Set-up </span> </a></li>
+            <li> <a href="#system" class="paginationA"> <span class="hover-text"> System </span> </a></li>
+            <li> <a href="#backEnd" class="paginationA"> <span class="hover-text">Back End</span> </a></li>
+            <li> <a href="#processing" class="paginationA"> <span class="hover-text">Processing</span> </a></li>
+            <li> <a href="#data" class="paginationA"> <span class="hover-text">Insights</span> </a></li>
+            <li> <a href="#frontEnd" class="paginationA"> <span class="hover-text">Front End</span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="intro">
+
+            <div>
+                <h1> <span class="notBold">Wind</span>io<span class="notBold">w</span></h1>
+                <h2> Sensing and IOT to prevent damp and mould at home. </h2>
+                <h3> Individual Project - 2019</h3>
+            </div>
+            <div class="downloadIconContainer">
+                <a target="_blank" style="color:black; text-decoration:none;" href="images/SIOT/SIOT.pdf" download>
+                    <img class="downloadIcon" src="images/General/download.png" />
+                    <h3 class="downloadIconText"><i>download <br />report</i></h3>
+                </a>
+            </div>
+            <img class="heroImage" src="images/SIOT/condensation.png" />
+
+            <h2>
+                <b>
+                    Damp and Mould growth affects 37% of rented properties in the UK and adversely
+                    affects the health of inhabitants.
+                </b>
+
+                <br />
+                <br />
+                Wind<b>io</b>w aims to prevent the build up of damp around windows by collecting and analysing data to create smart preventitive actions.
+                <br />
+                <br />
+                I set up the hardware, established an API channel communication, performed data analysis and built
+                a web based UI to visualise the data in a meaningful way.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="background">
+            <h1>Background</h1>
+            <h2>
+                Damp and mould have been shown to cause increased likelihood of respiratory problems, allergies, asthma and immune
+                system issues.
+                <br />
+                <br />
+                Mould growth is caused primarily by moisture and condensation.
+                Air humidity levels above 55% are considered dangerous.
+                Condensation forms when warm, humid air contacts a cold surface
+                such as the area surrounding a <b>window</b>. Windows are a common site for mould growth.
+                <br />
+                <br />
+                The <b>dewpoint</b>  is the temperature at which air forms a relative humidity of 100% and condenses.
+                The dew point is affected by the <b>temperature</b> and <b>relative humidity</b> of air (Lawrence, 2015). If the outside air temperature is less than the dewpoint, then it can be assumed that there is high risk of condensation forming around the inside of windows.
+
+            </h2>
+
+            <div class="subImage">
+                <img src="images/SIOT/mould.jpg" />
+                <h3><i>Mould forming around a window. </i></h3>
+            </div>
+
+        </div>
+
+        <div class="workAnchor" id="setUp">
+            <h1>Data Sources and Set-up</h1>
+            <h2>
+                The data sets for <b>Temperature </b>and <b>Humidity</b> were collected
+                using Arduino, Adafruit SHT31 environmental sensor and ESP8266 Wi-Fi shield.
+                <br />
+                <br />
+                The hardware was placed near a window in a domestic property where it was in
+                range of a wireless internet network and left to gather data over the course
+                of a week.
+            </h2>
+            <div class="subImage">
+                <img src="images/SIOT/setup.jpg" />
+                <h3><i>Hardware set-up. </i></h3>
+            </div>
+
+            <h2>
+                The data for the outside air temperature was collected from a nearby weather station
+                using an API.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="system">
+            <h1>End-to-End System</h1>
+            <h2>
+                Hardware collects the data and connects to a local WiFi Access Point.
+                The data is published to the ThingSpeak Channel. In the ThingSpeak platform
+                scheduled analysis is performed to populate the remaining fields but also to
+                actuate email notifications in the case of high-risk events.
+                Useful figures and graphics are created and displayed on a web page.
+
+            </h2>
+            <div class="subImage">
+                <img src="images/SIOT/diagram.png" />
+                <h3><i>System Diagram</i></h3>
+            </div>
+
+
+        </div>
+
+        <div class="workAnchor" id="backEnd">
+            <h1>Back End</h1>
+            <h2>
+                The online platform ThingSpeak was used to store the data.
+                ThingSpeak was well suited because Arduino and MATLAB
+                libraries already existed, making uploading, storing and
+                retrieving data fairly straightforward.
+                <br />
+                <br />
+                A unique channel was created with a few independent data fields
+                (Indoor Temperature, Indoor Humidity, Outside Temperature, Dew Point
+                and Condensation risk).
+                <br />
+                <br />
+                The ThingSpeak Arduino library uses RESTFUL API that communicates over
+                HTTP to read and publish data to the channelfrom the Arduino using the WiFi
+                Client from the ESP8266.
+                A unique channel API key was used to write data to the correct field.
+                The data was made publicly accessible by using the read API key.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="processing">
+            <h1>Processing</h1>
+            <h2>The dew point was calculated using the collected data and the following equation:</h2>
+            <div class="subImage">
+                <img src="images/SIOT/dewpointequation.png" />
+                <h3><i>Equation for dew point Where β = 17.62 and λ = 243.5 °C, T = Indoor Temperature °C , H = Indoor Humidity %</i></h3>
+            </div>
+            <h2>
+                If the outside Temperature is less than or equal to the Dew Point,
+                then there is a risk of condensation forming around the window.
+            </h2>
+
+        </div>
+        <div class="workAnchor" id="data">
+            <h1> Data Analysis and Key Insights</h1>
+            <h2>
+                Analysis of data showed that there is an inverse relationship betwen
+                Temperature and Humidity. This is interesting because not many people own de-humidifiers, but are able to easily control the heating of a property. In fact, there are many
+                smart home heating systems that this could integrate with.
+            </h2>
+        </div>
+
+        <div class="workAnchor" id="frontEnd">
+            <h1>Front End</h1>
+            <h2>
+                Below are re-creations of the live graphics used to for a user 
+                facing web-page dashboard of information and actions. 
+
+                The actions are theoretical controls that this system would 
+                work with including smart windows, heating and de-humidification. 
+            </h2>
+            <div class="subImage">
+                <img src="images/SIOT/1X/dewAsset 12.png" />
+            
+            </div>
+
+
+            <div class="problemDefinitionContainer">
+                <div> <img src="images/SIOT/1x/dewAsset 6.png" /></div>
+                <div> <img src="images/SIOT/1x/dewAsset 7.png" /></div>
+                <div> <img src="images/SIOT/1x/dewAsset 8.png" /></div>
+
+            </div>
+
+            <div class="problemDefinitionContainer">
+                <div> <img src="images/SIOT/1x/dewAsset 9.png" /></div>
+                <div> <img src="images/SIOT/1x/dewAsset 10.png" /></div>
+                <div> <img src="images/SIOT/1x/dewAsset 11.png" /></div>
+
+            </div>
+        </div>
+
+       
+
+
+
+
+
+    </div>
+        <footer>
+            <div class="footer-section" id="copyright">
+                <div class="footer-section-contents">
+                    <h3> &copy; Jacob Mitchell</h3>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div>
+                    <a id="back-text" style="color:black; text-decoration:none;" href="index.html#work"><h3> back to projects</h3></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-section-contents footer-section-right">
+                    <a target="_blank" href="https://www.linkedin.com/in/jacob-mitchell/"><img class="social-media-logo" src="images/General/1x/smAsset 1.png" /></a>
+                    <a target="_blank" href="https://github.com/bacon274"><img class="social-media-logo" src="images/General/1x/smAsset 2.png" /></a>
+                    <a target="_blank" href="mailto:jacob.fintan.mitchell@gmail.com"><img class="social-media-logo" src="images/General/1x/smAsset 3.png" /></a>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>
