@@ -186,8 +186,18 @@ body {
     margin-right: 10px;
     margin-bottom: 0px;
 }
-
-
+#tagSelector {
+    margin: 0px 12.5% 0px 12.5%;
+}
+#tagSelector span {
+    font-size: 15px;
+    color: white;
+    background-color: black /* rgb(254,138,113)*/;
+    border-radius: 4px;
+    padding: 0 2px 0 2px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
 
 .Work-Listing:hover .Listing-contents {
     visibility: visible;
