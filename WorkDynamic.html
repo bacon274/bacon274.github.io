@@ -33,63 +33,10 @@
 
     </header>
     <div id="work" class="padding"> </div>
-    <div id="tagSelector">
-        <span> test</span>
-
-    </div>
-    <div id="work" class="padding"> </div>
     <div id="root"></div>
-
     <script type="text/babel">
-        class WorkObject {
-                constructor(href, imgsrc, logoPresent, logoSource, name, description, tags, render){
-                this.href = href;
-                this.imgsrc = imgsrc;
-                this.logoPresent = logoPresent;
-                this.logoSource = logoSource;
-                this.name = name;
-                this.description = description;
-                this.tags = tags;
-                this.render = render;
-        }
-        };
-
-        var workList = [];
-        var solo = new WorkObject("work_1.html", "images/Solo/final.jpg", true, "images/Solo/logo.png", "Polysand", "Designing cost effective building materials using local waste with the charity WasteAid.", ["Sustainable Design",  "Circular Economy" , "Optimisation"], true)
-        workList.push(solo);
-
-        let AddWorkListing = (workList) => {
-            return(
-                    workList.map(workObject => (workObject.render == true?
-                       ( <div key={workObject.name} className="Work-Listing">
-                            <a href={workObject.href}>
-                                <img className="Work-image" src={workObject.imgsrc} />
-                                <img className="clientLogo" src={workObject.logoSource} />
-                                <div className="Listing-contents">
-                                    <h1>{workObject.name}</h1>
-                                    <p>{workObject.description}</p>
-                                    {workObject.tags.map(tag => <span key={tag}> {tag} </span>)}
-                                </div>
-                            </a>
-                        </div>)
-                    : null)
-                    )
-                )
-        };
-
-        class App extends React.Component {
-        }
-
-        
-
-    ReactDOM.render(
-    AddWorkListing(workList),
-    document.querySelector(".Work-container")
-    );
-
-            /*
-            <!--
-        const WorkObject(href, imgsrc, logoPresent, logoSource, name, description, tags) {
+        class WorkObject {// Creates work object
+        constructor(href, imgsrc, logoPresent, logoSource, name, description, tags, render){
         this.href = href;
         this.imgsrc = imgsrc;
         this.logoPresent = logoPresent;
@@ -97,31 +44,238 @@
         this.name = name;
         this.description = description;
         this.tags = tags;
+        this.render = render;
+        }
+        };
+        
+        class TagObject {// creates tag object. 
+            constructor(tag, workObject){
+                this.tag = tag; 
+                this.children =[]; 
+                this.children.push(workObject);
+                this.childCount = 1;
+            }
+            addChild(child){
+            this.children.push(child)
+            this.childCounter()}
+
+            childCounter(){
+            this.childCount = this.children.length;
+            } 
+        };
+        class TagComponent extends React.Component {// Creates and renders the tag component
+            constructor(props){
+                super(props)
+                this.tagObject = props.tagObject; 
+                this.state = {selected: false, tagObject:this.tagObject};
+                this.submitTagList = this.submitTagList.bind(this);
+                   
+            }
+            submitTagList(){
+                const {updateTagList} = this.props;
+                const {tagObject} = this.state;
+                updateTagList(tagObject);
+                console.log("Active Tag: " + tagObject.tag);
+            }
+            toggleSelect = () => {
+                this.setState(prevState => ({
+                selected: !prevState.selected
+                }));
+                this.submitTagList()
+            }
+            
+            render(){
+                return(
+                <span onClick={this.toggleSelect} key={this.tag}> {this.tagObject.tag} </span>
+                );
+
+            }
         };
 
-        const CreateWork = (object) => {
-        <div className="Work-Listing"> <h1> </h1></div>
+        class TagContainer extends React.Component {// renders the div and nests tagComponents 
+                constructor(props){
+                    super(props)
+                    this.workList = props.workList; 
+                    this.init = function (workList) {
+                        var tagObjects = [];
+                        for (var i = 0; i < workList.length; i++) {
+                            for (var j = 0; j < workList[i].tags.length; j++) {
+                                let tag = workList[i].tags[j];
+                                
+                                let object = workList[i];
+                                let op = tagObjects.filter(object => (object.tag == tag));
+                                if (op.length == 0) {
+                                    var tagObject = new TagObject(tag, object)
+                                    tagObjects.push(tagObject);
+                                } else {
+                                    op[0].addChild(object)
+                                };
+                            };
+                        };
+                        
+                        return(tagObjects.sort(function(a, b){return (b.childCount - a.childCount) }))
+                        
+                    };
+                    this.tagObjects = this.init(this.workList); 
+                    this.state = {tagObjectList: this.tagObjects, test: ''}
+                    this.onUpdateTagList = this.onUpdateTagList.bind(this);
+                    this.submitWorkList = this.submitWorkList.bind(this);
+                    this.submitReset = this.submitReset.bind(this);
+                }
+                onUpdateTagList(newTagObject){
+                    let children = newTagObject.children; 
+
+                    //function for updating the state of the tag list
+                    // to be passed to child
+                    // console.log("updating tagobjectlist"+ newTagObjectList)
+                    // this.setState({test: newTagObjectList})
+                    this.submitWorkList(children);
+                }
+                submitWorkList(children){
+                    const {test} = this.state; 
+                    const {updateWorkList} = this.props;
+                    let newWorkList = children;
+                    //make new work list based on the list of tag objects
+                    //for loop, if selected then add child to newWorkList
+                    
+                    updateWorkList(newWorkList);
+                    // this is then passed up to App 
+                }
+                submitReset(){
+                    const {reset} = this.props; 
+                    reset();
+                    //call parent function
+
+                }
+
+                render(){
+                    let objects = this.tagObjects;
+                    return(
+                        <>
+                        <div>
+                        {objects.map(object => 
+                        <TagComponent key= {object.tag} updateTagList={this.onUpdateTagList} tagObject={object} />)}
+                        <span className='xButton' onClick={this.submitReset}>  x  </span>
+                        </div>
+                        </>
+                        )
+                }
+                
 
         };
 
+        class AddWorkListing extends React.Component {// Function that takes list of work objects and populates div
+            constructor(props){
+                super(props)
+                this.workList = props.workList;
+                console.log(props);
+                this.state=({workList: this.workList});
+                
+            }
+            changeState(newWorkList){
+                this.setState({workList: newWorkList});
+            }
+            render(){
+                {console.log("Add work state= ")};
+                {console.log(this.state.workList)};
+                return(
+                    
+                    
+                this.state.workList.map(workObject => (workObject.render == true?
+                (   
+                    <div key={workObject.name} className="Work-Listing">
+                    <a href={workObject.href}>
+                        <img className="Work-image" src={workObject.imgsrc} />
+                        <img className="clientLogo" src={workObject.logoSource} />
+                        <div className="Listing-contents">
+                            <h1>{workObject.name}</h1>
+                            <p>{workObject.description}</p>
+                            {workObject.tags.map(tag => <span key={tag}> {tag} </span>)}
+                        </div>
+                    </a>
+                    </div>)
+                : null)
+                    )
+        
+                )
+            };
+        };
+       
+        class App extends React.Component{
+            constructor(props){
+                super(props); 
+                this.workList= props.workList;
+                this.state = {workList: this.workList}
+                this.onUpdateWorkList = this.onUpdateWorkList.bind(this);
+                this.onReset = this.onReset.bind(this);
+                this.workElement = React.createRef();
+                // console.log(this.state.workList1);
+                // console.log(this.state.workList2);
 
-         const Hello = () => {
-        return(
-        <h1> Welcome </h1>
+            }
+            onUpdateWorkList(newWorkList){
+                //this.setState({workList1: newWorkList});
+                this.workElement.current.changeState(newWorkList);
+                //this.render();
+                // console.log(this.state.workList1);
+                // console.log(this.state.workList2);
+                //console.log(this.state);
+            }
+            onReset(){
+                this.workElement.current.changeState(this.workList);
+            }
+            render(){
+                console.log("App state: ");
+                console.log(this.state.workList);
+                console.log(this.state.workList !== null);
+                return(
+                    <>
+                        <div id="tagSelector"><TagContainer reset ={this.onReset} updateWorkList = {this.onUpdateWorkList} workList = {this.state.workList}/></div>
+                        <div id="work" className="padding"> </div>
+                        {this.state.workList !== null && (<div className = "Work-container"> <AddWorkListing ref={this.workElement} workList ={this.state.workList}/> </div>) }
+                    </>
+                );
+            };
+        };
+       
+       
+        var workList = [
+        // Find nice way of importing work, maybe from CSV
+        new WorkObject("work_1.html", "images/Solo/final.jpg", true, "images/Solo/logo.png", "Polysand", "Designing cost effective building materials using local waste with the charity WasteAid.", ["Sustainable Design",  "Circular Economy" , "Optimisation"], true),
+        new WorkObject("RRP.html", "images/RRP/rrp.JPG", false, "", "Robot Handshake", "Research project exploring the use of novel materials to create realism and comfort in a robot-human handshake.", ["Robotics",  "Research" ], true),
+        new WorkObject("Amun.html", "images/Amun/maincropped.jpg", false, "", "Amun", "Technical design of a low cost Spirometer.", ["Product Design","Medical Device",  "MATLAB" , "Engineering", "Analysis"], true),
+        new WorkObject("SwingSafe.html", "images/Ero/swingsafe.jpg", false, "", "SwingSafe", "Helping golfers play harder, longer and safer.", ["Enterprise",  "Human Centered Design" , "Medical Device"], true),
+        new WorkObject("Cochlea.html", "images/Cochlea/webreadyzoom.jpg", false, "", "Cochlea", "Immersive audiovisual installation illustrating the functionality of part of the ear.", ["Audio",  "Installation" , "MAX MSP", "Arduino"], true),
+        new WorkObject("Goldfinger.html", "images/Goldfinger/table.jpg", true, "images/Goldfinger/logosquare.png", "Goldfinger Factory", "6 month internship at Goldfinger Factory, an upcycling furniture studio and social enterprise.", ["Sustainable Design",  "Circular Economy" , "Enterpise", "Fabrication"], true),
+        new WorkObject("Rehapp.html","images/Rehapp/cover.jpg", false, "", "Rehapp", "Transforming rehabilitation in the home.", ["Medical Device",  "Gamification" , "Arduino", "Python", "UI"], true),
+        new WorkObject("Robotics.html", "images/Robotics/cover.jpg", false, "", "Feeding Robot", "Autonomously feeding robot.", ["Python",  "ROS" , "Computer Vision", "Robotics"], true),
+        new WorkObject("SIOT.html", "images/SIOT/windiow.png", false, "", "Windiow", "Sensing and IOT to prevent damp and mould at home.", ["IOT",  "UI" ,  "Arduino" , "Full Stack"], true),
+        new WorkObject("Vitarun.html", "images/Vitarun/1x/logoAsset 2.png", false, "", "", "Smart insoles and machine learning to prevent running injury. ", ["Full Stack",  "Machine Learning" , "UI" ], true),
+        new WorkObject("SIOT.html", "images/Fire Bowl/firebowl.jpg", false, "", "FireBowl", "Flat pack fire bowl for responsible camping. ", ["Product Design",  "Fabrication" , "Metal"], true)
+        ];
 
+        // workList.push(solo);
+        // workList.push(rehapp);
+
+        ReactDOM.render(<App workList ={workList} />, document.querySelector("#root"));
+        /*ReactDOM.render(
+            AddWorkListing(workList),
+            document.querySelector(".Work-container")
         );
-
-        };
-
-
         ReactDOM.render(
-        <Hello />,
-        document.querySelector("#root")
+            <TagContainer workList ={workList} />,
+            document.querySelector("#tagSelector")
         );
-        -->
-            */
-
+*/
+        
     </script>
+    <div id="tagSelector">
+        <span> test</span>
+
+    </div>
+    <div id="work" class="padding"> </div>
+    
+
     <div class="Work-container">
         <!-- <script src="dynamicWork.js"></script> -->
 
