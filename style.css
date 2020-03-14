@@ -208,15 +208,14 @@ body {
     background-color: black /* rgb(254,138,113)*/;
 
 }
+
 #tagSelector span.xButton{
-    font-size: 15px;
-    color: black;
+    
     border-radius: 10px;
     padding: 0 5px 0 5px;
-    background-color: white; 
-    
-
+   
 }
+
 
 .Work-Listing:hover .Listing-contents {
     visibility: visible;
