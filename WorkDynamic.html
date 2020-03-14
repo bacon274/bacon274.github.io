@@ -152,11 +152,11 @@
                     let objects = this.tagObjects;
                     return(
                         <>
-                        <div>
+                        
                         {objects.map(object => 
                         <TagComponent key= {object.tag} updateTagList={this.onUpdateTagList} tagObject={object} />)}
                         <span className='xButton' onClick={this.submitReset}>  x  </span>
-                        </div>
+                        
                         </>
                         )
                 }
