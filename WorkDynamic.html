@@ -26,10 +26,11 @@
 <body>
     <header>
         <div class="menu-container">
-            <a class="menu-text" href="index.html#work"> <span> work </span> </a>
-            <a href="#home" class="menu-text"> <span class="name"> Jacob Mitchell </span> <span> <img class="logo" src="images/logodpi.png"></span> </a>
-            <a class="menu-text" href="about.html"> <span> about </span> </a>
-        </div>
+            </div>
+
+    <script>
+        $( ".menu-container" ).load( "header.html" );
+    </script>
 
     </header>
     <div id="work" class="padding"> </div>
@@ -273,22 +274,10 @@
     <div id="work" class="padding"> </div>
     
     <footer>
-        <div class="footer-section" id="index-copyright">
-            <div class="footer-section-contents">
-                <h3>&copy; Jacob Mitchell</h3>
-            </div>
-        </div>
-        <div class="footer-section">
-            <a class="up-Arrow" href="#top">  </a>
-        </div>
-        <div class="footer-section">
-            <div class="footer-section-contents footer-section-right">
-                <a target="_blank" href="https://www.linkedin.com/in/jacob-mitchell/"><img class="social-media-logo" src="images/General/1x/smAsset 1.png" /></a>
-                <a target="_blank" href="https://github.com/bacon274"><img class="social-media-logo" src="images/General/1x/smAsset 2.png" /></a>
-                <a target="_blank" href="mailto:jacob.fintan.mitchell@gmail.com"><img class="social-media-logo" src="images/General/1x/smAsset 3.png" /></a>
-            </div>
-        </div>
+        
     </footer>
-
+    <script>
+        $( "footer" ).load( "footer.html" );
+        </script>
 </body>
 </html>
