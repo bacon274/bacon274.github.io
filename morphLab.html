@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.typekit.net/cwl8aae.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css" />
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+
+    <script language="JavaScript">
+
+        var anchors;
+        var dots;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            anchors = document.getElementsByClassName('workAnchor');
+            dots = document.getElementsByClassName('paginationA');
+            console.log("anchor points:" + anchors.length);
+            console.log("dots:" + dots.length);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function () {
+                    /* var current = document.getElementsByClassName(" active");
+                     current[0].className = current[0].className.replace(" active", "");
+                     dots[i].className += " active"; */
+                })
+            };
+        });
+
+        window.onscroll = function () {
+
+            for (var i = 0; i < anchors.length; i++) {
+                console.log(i + ":" + anchors[i].getBoundingClientRect().bottom);
+                if ((anchors[i].getBoundingClientRect().top <= 1 && anchors[i].getBoundingClientRect().top > -40) || (anchors[i].getBoundingClientRect().bottom <= 1 && anchors[i].getBoundingClientRect().bottom > -40)) {
+                    console.log("Section" + i);
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    dots[i].className += " active";
+                }
+            }
+
+        }
+
+
+    </script>
+     <script language="JavaScript">
+        $(document).ready(function(){
+            $("#play").click(function () {
+                var video = '<div class="video-container"><iframe src="'+ $('#videoPlaceholder').attr('data-video') +'"></iframe></div>';
+                $('.videoFrame').hide();
+                $('.tube').html(video);
+                
+
+
+            });
+            
+        });
+
+    </script>
+
+     <script language="JavaScript">
+        $(document).ready(function () {
+            $('.morphCarousel').slick({
+                centerMode: true,
+                slidesToShow: 1,
+                dots: true,
+                arrows: true,
+                prevArrow: '<button class="prev-arrow"></button>',
+                nextArrow: '<button class="next-arrow"></button>',
+                adaptiveHeight: true,
+                variableHeight: true, 
+                // variableWidth: true
+            });
+        });
+    </script>
+
+
+
+
+</head>
+<body>
+    <header>
+        <section class="menu-container">
+           </section>
+        <script>
+            $( ".menu-container" ).load( "header.html" );
+            </script>
+
+
+    </header>
+    <!--Landing hero image-->
+    <div class="workMainBody">
+        <ul class="pagination">
+            <li> <a href="#intro" class="paginationA active"> <span class="hover-text"> Intro </span> </a></li>
+            <li> <a href="#Background" class="paginationA"> <span class="hover-text"> Background </span> </a></li>
+            <li> <a href="#sensors" class="paginationA"> <span class="hover-text"> Sensor Design </span> </a></li>
+            <li> <a href="#testRig" class="paginationA"> <span class="hover-text"> Test Rig </span> </a></li>
+            <li> <a href="#hall" class="paginationA"> <span class="hover-text"> Results | Hall Effect</span> </a></li>
+            <li> <a href="#alginate" class="paginationA"> <span class="hover-text"> Results | Alginate </span> </a></li>
+            <li> <a href="#conclusions" class="paginationA"> <span class="hover-text"> Conclusions </span> </a></li>
+
+        </ul>
+        <div class="workAnchor" id="intro">
+            <div>
+                <h1> Cardiac Sensor</h1>
+                <h2> Development and testing of a bio-compatible elastic strain sensor for measuring cardiac implant contractions in vivo. </h2>
+                <h3> 2020 - I worked under supervision of Dr Thomas Owen and  Dr Sian Harding of the National Heart & Lung Institute and Dr Thrishantha Nanayakkara from the Dyson School of Design Engineering.   </h3>
+            </div>
+            <img class="heroImage" src="images/morphLab/heroalt.jpg" />
+
+        </div>
+        <div class="workAnchor" id="Background">
+            <h1>Background</h1>
+            <h2>
+                The research team at the <b>National Heart & Lung Institute</b> are investigating the
+                transplantation of lab grown <b>cardiac implants </b> for regeneration after heart failure.
+                </br>
+                </br>
+            </h2>
+
+            <div class="videoFrame">
+                <img class="playIcon" id="play" src="images/General/playAsset 1.png" />
+                <img class="heroImage" id="videoPlaceholder" src="images/morphLab/videoHolder.jpg" data-video=https://www.youtube.com/embed/0Pt4u5vIJPI?rel=0&showinfo=0&autohide=1&modestbranding=1&autoplay=1" />
+            </div>
+            <div class="tube"></div>
+
+            </br>
+            </br>
+
+            <div id="objectiveBox">
+            </br>
+                <h2>
+                   
+                    I was tasked to develop high sensitivity sensor solutions for measuring the contractions: 
+                    <ol class="objectiveList" style="font-weight: bold;">
+                        <li>1. whilst implanted (in vivo) </li>
+                    </br>
+                        <li>2. in the lab (in vitro) </li>
+                    </ol>
+                
+                These undergo small displacements <b>(< 5 mm) </b> and small stresses <b>(0.005 Pa > &sigma; > 0.03 Pa)</b>.
+                </br>
+                </br>
+                </h2>
+            </div>
+        </br>
+            <h2> This project took place during the COVID-19 lockdown in the UK, so I built the testing apparatus at home. 
+            </br>
+            </br>
+                I developed and tested two different solutions and my preliminary research was used as part of a grant funding application, to enable the future development of this project. </h2>
+
+            </br>
+            </br>
+            </h2>
+            <div class="downloadIconContainer">
+                <a target="_blank" style="color:black; text-decoration:none;" href="images/morphLab/Cardiac_Sensor_report.pdf" download>
+                    <img class="downloadIcon" src="images/General/download.png" />
+                    <h3 class="downloadIconText"><i>download <br />report</i></h3>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="workAnchor" id="sensors">
+            <h1>Sensor Design</h1>
+            
+    
+            </h2>
+            <h2><b>1. in vivo</b></h2>
+            <h2> A simple <b>Alginate based Hydrogel </b> was chosen for its <b>elasticity</b>, <b>bio-compatibility</b> and <b>electrical properties</b>.
+            </br>
+            </br>
+                 Alginate hydrogel networks conduct electricity through the mobility of charged
+                ions. As the hydrogel is stretched, the charge pathways are limited and the resistance increases . </h2>      
+                <div class="subImage">
+                    <img src="images/morphLab/touch.gif" />
+                    <h3><i>Alginate sensor resistance changes when stretched </i></h3>
+                </div>
+
+            <h2>The hydrogel was prepared by enclosing Sodium Alginate in a mould, between sheets of filter paper soaked in
+                Calcium Chloride crosslinker. </h2>
+            <div class="subImage">
+                <img src="images/morphLab/mould.png">
+                <h3><i>Mould Design</i></h3>
+            </div>
+            <h2><b>2. in vitro</b></h2>
+
+            <h2> A <b>Hall effect sensor</b> was chosen for its <b>robustness</b> and <b>high sensitivity</b> at low displacements.
+             </h2>
+
+                <div class="subImage">
+                    <img src="images/morphLab/hallsmall.jpg" />
+                    <h3><i>Hall effect sensor and permenant magnet </i></h3>
+                </div>
+            <h2>Hall effect sensors measure the strength of a magnetic field. This has an inverse square relationship to distance, hence it can be
+                used to measure distance after calibration. </h2>
+            
+        </div>
+
+        <div class="workAnchor" id="testRig">
+            <h1>Test Rig</h1>
+            <img class="heroImage" src="images/morphLab/working2.jpg" />
+            <h2>A test rig was built that achieves linear movement with a resolution of 5 &micro;m using an Arduino, stepper motor and
+                threaded rod. 
+            </br>
+            </br>
+                A carriage moves linearly, applying strain to samples. While the resistance changes are measured using a wheatstone bridge circuit
+                coupled with an operational amplifier with variable gain.
+           
+            </h2>
+            
+            <!-- <div class="subImage">
+                <img src="images/morphLab/test_rig.jpg" />
+                <h3><i>Hall effect sensor and permanent magnet </i></h3>
+            </div>
+
+            <div class="subImage">
+                <img src="images/morphLab/stretch.gif" />
+                <h3><i>Hall effect sensor and permanent magnet </i></h3>
+            </div> -->
+
+            <div class="morphCarousel" >
+                <div class="item"><img src="images/morphLab/test_rig_crop.jpg" /> <h3><i>Test Rig </i></h3></div>
+                <div class="item"><img src="images/morphLab/stretch.gif" /> <h3><i>Stretching Alginate samples</i></h3></div>
+                <div class="item"><img src="images/morphLab/circuit.png" /> <h3><i>Circuit Diagram | Rs is the sample being tested</i></h3></div>
+            </div>
+
+            <h2> 
+            </h2>
+
+        </div>
+
+        <div class="workAnchor" id="hall">
+            <h1>Results | Hall Effect Sensor</h1>
+            <h2>The sensor showed high sensitivity with low displacements < 5mm. 
+            </br>
+            </br>
+                In order to calibrate the sensor, a model had to be fit to the data. The curve was modelled using a variety of different fits which are shown in the table below. 
+                A Rational model with 5 coefficients was selected.     </h2>
+           
+            <div class="morphCarousel" >
+                <div class="item"><img src="images/morphLab/rationalfit.jpg" /> <h3><i>Graph of Voltage vs Displacement with Rational model fit </i></h3></div>
+                <div class="item"><img src="images/morphLab/hallTable.png" /> <h3><i>Table of data fits and scores</i></h3></div>
+                <div class="item"><img src="images/morphLab/equation.png" /> <h3><i>Equation of rational 5 calibration curve</i></h3></div>
+
+            </div>
+
+            Repeat cycles of 2 mm displacement were performed. These show consistency up to 100 cycles.
+
+
+            <div class="morphCarousel" >
+                <div class="item"><img src="images/morphLab/hallEffect100.jpg" /> <h3><i>100 cycles of loading Hall effct sensor </i></h3></div>
+                <div class="item"><img src="images/morphLab/hallEffect5.jpg" /> <h3><i>5 cycles of loading Hall effct sensor</i></h3></div>
+            </div>
+           
+
+        </div>
+
+        <div class="workAnchor" id="alginate">
+            <h1>Results | Alginate Sensor</h1>
+            <h2>The Alginate sample was loaded until failure. The sample fractured at around &epsilon; = 65%.
+                The Gauge Factor was measured to be 2.79.
+                </h2>
+
+
+
+                <div class="subImage">
+                    <img src="images/morphLab/guagefactor.jpg" />
+                    <h3><i> Loading of Alginate</i></h3>
+                </div>
+            <h2>
+
+                Repeat loading cycles were performed with 51x signal gain. 
+                  5 cycles of 3 mm (&epsilon; = 10%) showed a significant upwards creep in resistance. This suggests either
+                plastic deformation or slippage has occured.</h2>
+
+            
+            <div class="subImage">
+                <img src="images/morphLab/alginateCycles.jpg" />
+                <h3><i> Loading of Alginate</i></h3>
+            </div>
+
+        </div>
+        
+        <div class="workAnchor" id="conclusions">
+            <h1>Conclusions</h1>
+            <h2> <b>The Alginate sensor</b> had high sensitivity (Gauge Factor of 2.79 is comparable to standard strain gauges).
+                However, the upwards <b>creep in resistance</b> upon repeat loading implies plastic deformation. Therefore,  
+                solutions such as hybrid network hydrogel with enhanced toughness and elasticity should be considered.
+                
+            </br>
+            </br>
+                The use of <b>Hall effect sensor</b> for in vitro measurements has the most im-
+                mediate potential, achieving sensitivity in the correct range. The sensitivity of the sensor was limited by
+                the resolution of the test rig and after calibration could measure displacements as low as 5 &micro;m and theoretically
+                measure stresses as low as 20 Pa on cardiac tissue.
+
+            </div>
+
+    </div>
+    <footer></footer>
+    <script>
+        $( "footer" ).load( "footer.html" );
+        </script>
+
+
+
+</body>
+
+</html>
