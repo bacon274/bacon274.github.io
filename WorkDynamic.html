@@ -36,17 +36,23 @@
     <div id="work" class="padding"> </div>
     <div id="root"></div>
     <script type="text/babel">
+
+
         class WorkObject {// Creates work object
-        constructor(href, imgsrc, logoPresent, logoSource, name, description, tags, render){
-        this.href = href;
-        this.imgsrc = imgsrc;
-        this.logoPresent = logoPresent;
-        this.logoSource = logoSource;
-        this.name = name;
-        this.description = description;
-        this.tags = tags;
-        this.render = render;
-        }
+            constructor(href, imgsrc, logoPresent, logoSource, name, description, tags, render){
+            this.href = href;
+            this.imgsrc = imgsrc;
+            this.logoPresent = logoPresent;
+            this.logoSource = logoSource;
+            this.name = name;
+            this.description = description;
+            this.tags = tags;
+            this.render = render;
+            }
+
+            
+
+            
         };
         
         class TagObject {// creates tag object. 
@@ -76,7 +82,7 @@
                 const {updateTagList} = this.props;
                 const {tagObject} = this.state;
                 updateTagList(tagObject);
-                console.log("Active Tag: " + tagObject.tag);
+                // console.log("Active Tag: " + tagObject.tag);
             }
             toggleSelect = () => {
                 this.setState(prevState => ({
@@ -94,73 +100,80 @@
         };
 
         class TagContainer extends React.Component {// renders the div and nests tagComponents 
-                constructor(props){
-                    super(props)
-                    this.workList = props.workList; 
-                    this.init = function (workList) {
-                        var tagObjects = [];
-                        for (var i = 0; i < workList.length; i++) {
-                            for (var j = 0; j < workList[i].tags.length; j++) {
-                                let tag = workList[i].tags[j];
-                                
-                                let object = workList[i];
-                                let op = tagObjects.filter(object => (object.tag == tag));
-                                if (op.length == 0) {
-                                    var tagObject = new TagObject(tag, object)
-                                    tagObjects.push(tagObject);
-                                } else {
-                                    op[0].addChild(object)
-                                };
-                            };
-                        };
-                        
-                        return(tagObjects.sort(function(a, b){return (b.childCount - a.childCount) }))
-                        
-                    };
-                    this.tagObjects = this.init(this.workList); 
-                    this.state = {tagObjectList: this.tagObjects, test: ''}
-                    this.onUpdateTagList = this.onUpdateTagList.bind(this);
-                    this.submitWorkList = this.submitWorkList.bind(this);
-                    this.submitReset = this.submitReset.bind(this);
-                }
-                onUpdateTagList(newTagObject){
-                    let children = newTagObject.children; 
-
-                    //function for updating the state of the tag list
-                    // to be passed to child
-                    // console.log("updating tagobjectlist"+ newTagObjectList)
-                    // this.setState({test: newTagObjectList})
-                    this.submitWorkList(children);
-                }
-                submitWorkList(children){
-                    const {test} = this.state; 
-                    const {updateWorkList} = this.props;
-                    let newWorkList = children;
-                    //make new work list based on the list of tag objects
-                    //for loop, if selected then add child to newWorkList
+            constructor(props){
+                super(props)
+                this.workList = props.workList; 
+                
+                this.init = function (workList) {
+                   
+                    var tagObjects = [];
                     
-                    updateWorkList(newWorkList);
-                    // this is then passed up to App 
-                }
-                submitReset(){
-                    const {reset} = this.props; 
-                    reset();
-                    //call parent function
+                    // code for creating a list of tag objects from the worklist
+                    for (var i = 0; i < workList.length; i++) {                 // run through worklist
+                        for (var j = 0; j < workList[i].tags.length; j++) {     // run through tags in each workobject
+                            var currentTag = workList[i].tags[j];               // find tag          
+                            let object = workList[i];                           // find work object it is from 
+                            let duplicateList = tagObjects.filter(item => (item.tag == currentTag));  //PROBLEM\\ // new list of  duplicate tags that are already in tag objects list
+                            
+                            if (duplicateList.length == 0) {                               // if no duplicates, make a tag object
+                                var tagObject = new TagObject(currentTag, object)      // construct tagObject
+                                tagObjects.push(tagObject);
+                            } else {                                   // if duplicates, add the workObject as a child to that tagobject
+                                duplicateList[0].addChild(object)
+                            };
+                            
+                           
+                        };
+                    };
+                    
+                    return(tagObjects.sort(function(a, b){return (b.childCount - a.childCount) }))
+                    
+                };
+                
+                this.tagObjects = this.init(this.workList); 
+                this.state = {tagObjectList: this.tagObjects, test: ''}
+                this.onUpdateTagList = this.onUpdateTagList.bind(this);
+                this.submitWorkList = this.submitWorkList.bind(this);
+                this.submitReset = this.submitReset.bind(this);
+            }
+            onUpdateTagList(newTagObject){
+                let children = newTagObject.children; 
 
-                }
+                //function for updating the state of the tag list
+                // to be passed to child
+                // console.log("updating tagobjectlist"+ newTagObjectList)
+                // this.setState({test: newTagObjectList})
+                this.submitWorkList(children);
+            }
+            submitWorkList(children){
+                const {test} = this.state; 
+                const {updateWorkList} = this.props;
+                let newWorkList = children;
+                //make new work list based on the list of tag objects
+                //for loop, if selected then add child to newWorkList
+                
+                updateWorkList(newWorkList);
+                // this is then passed up to App 
+            }
+            submitReset(){
+                const {reset} = this.props; 
+                reset();
+                //call parent function
 
-                render(){
-                    let objects = this.tagObjects;
-                    return(
-                        <>
-                        
-                        {objects.map(object => 
-                        <TagComponent key= {object.tag} updateTagList={this.onUpdateTagList} tagObject={object} />)}
-                        <span className='xButton' onClick={this.submitReset}>  x  </span>
-                        
-                        </>
-                        )
-                }
+            }
+            
+            render(){
+                let objects = this.tagObjects;
+                return(
+                    <>
+                    
+                    {objects.map(object => 
+                    <TagComponent key= {object.tag} updateTagList={this.onUpdateTagList} tagObject={object} />)}
+                    <span className='xButton' onClick={this.submitReset}>  x  </span>
+                    
+                    </>
+                    )
+            }
                 
 
         };
@@ -169,7 +182,7 @@
             constructor(props){
                 super(props)
                 this.workList = props.workList;
-                console.log(props);
+                // console.log(props);
                 this.state=({workList: this.workList});
                 
             }
@@ -177,8 +190,8 @@
                 this.setState({workList: newWorkList});
             }
             render(){
-                {console.log("Add work state= ")};
-                {console.log(this.state.workList)};
+                // {console.log("Add work state= ")};
+                // {console.log(this.state.workList)};
                 return(
                     
                     
@@ -226,9 +239,9 @@
                 this.workElement.current.changeState(this.workList);
             }
             render(){
-                console.log("App state: ");
-                console.log(this.state.workList);
-                console.log(this.state.workList !== null);
+                // console.log("App state: ");
+                // console.log(this.state.workList);
+                // console.log(this.state.workList !== null);
                 return(
                     <>
                         <div id="tagSelector"><TagContainer reset ={this.onReset} updateWorkList = {this.onUpdateWorkList} workList = {this.state.workList}/></div>
@@ -239,25 +252,22 @@
             };
         };
        
-       
+        
         var workList = [
         // Find nice way of importing work, maybe from CSV
-        new WorkObject("work_1.html", "images/Solo/final.jpg", true, "images/Solo/logo.png", "Polysand", "Designing cost effective building materials using local waste with the charity WasteAid.", ["Sustainable Design",  "Circular Economy" , "Engineering","Optimisation"], true),
-        new WorkObject("RRP.html", "images/RRP/rrp.JPG", false, "", "Robot Handshake", "Research project exploring the use of novel materials to create realism and comfort in a robot-human handshake.", ["Coding","Robotics",  "Research", "Analysis"], true),
-        new WorkObject("Amun.html", "images/Amun/maincropped.jpg", false, "", "Amun", "Technical design of a low cost Spirometer.", ["Coding", "Product Design","Medical" , "Engineering", "Analysis"], true),
-        new WorkObject("SwingSafe.html", "images/Ero/swingsafe.jpg", false, "", "SwingSafe", "Helping golfers play harder, longer and safer.", ["Human Centered Design" , "Product Design", "Medical", "Enterpise"], true),
-        new WorkObject("Cochlea.html", "images/Cochlea/webreadyzoom.jpg", false, "", "Cochlea", "Immersive audiovisual installation illustrating the functionality of part of the ear.", ["Coding","Audio", "MAX MSP", "Arduino"], true),
-        new WorkObject("Goldfinger.html", "images/Goldfinger/table.jpg", true, "images/Goldfinger/logosquare.png", "Goldfinger Factory", "6 month internship at Goldfinger Factory, an upcycling furniture studio and social enterprise.", ["Sustainable Design",  "Circular Economy" , "Enterpise", "Fabrication"], true),
-        new WorkObject("Rehapp.html","images/Rehapp/cover.jpg", false, "", "Rehapp", "Transforming rehabilitation in the home.", ["Medical",  "Gamification" ,"Coding", "Arduino", "Python", "UI"], true),
-        new WorkObject("Robotics.html", "images/Robotics/cover.jpg", false, "", "Feeding Robot", "Autonomously feeding robot.", ["Coding","Python",  "ROS" , "Computer Vision", "Robotics"], true),
-        new WorkObject("SIOT.html", "images/SIOT/windiow.png", false, "", "Windiow", "Sensing and IOT to prevent damp and mould at home.", ["Coding","IOT",  "UI" ,  "Arduino" , "Full Stack"], true),
-        new WorkObject("Vitarun.html", "images/Vitarun/1x/logoAsset 2.png", false, "", "", "Smart insoles and machine learning to prevent running injury. ", ["Coding","Full Stack",  "Machine Learning" , "UI", "Medical" ], true),
-        new WorkObject("FireBowl.html", "images/Fire Bowl/firebowl.jpg", false, "", "FireBowl", "Flat pack fire bowl for responsible camping. ", ["Product Design",  "Fabrication"], true),
-        new WorkObject("morphLab.html", "images/morphLab/heroalt.jpg", false, "", "Cardiac Sensor", "Bio-compatible elastic strain sensor for measuring cardiac contractions in vivo", ["Robotics", "Medical", "Research", "Engineering", "Analysis"], true)
+            new WorkObject("work_1.html", "images/Solo/final.jpg", true, "images/Solo/logo.png", "Polysand", "Designing cost effective building materials using local waste with the charity WasteAid.", ["Sustainable Design",  "Circular Economy" , "Engineering","Optimisation"], true),
+            new WorkObject("RRP.html", "images/RRP/rrp.JPG", false, "", "Robot Handshake", "Research project exploring the use of novel materials to create realism and comfort in a robot-human handshake.", ["Coding","Robotics",  "Research", "Analysis"], true),
+            new WorkObject("Amun.html", "images/Amun/maincropped.jpg", false, "", "Amun", "Technical design of a low cost Spirometer.", ["Coding", "Product Design","Medical" , "Engineering", "Analysis"], true),
+            new WorkObject("SwingSafe.html", "images/Ero/swingsafe.jpg", false, "", "SwingSafe", "Helping golfers play harder, longer and safer.", ["Human Centered Design" , "Product Design", "Medical", "Enterpise"], true),
+            new WorkObject("Cochlea.html", "images/Cochlea/webreadyzoom.jpg", false, "", "Cochlea", "Immersive audiovisual installation illustrating the functionality of part of the ear.", ["Coding","Audio", "MAX MSP", "Arduino"], true),
+            new WorkObject("Goldfinger.html", "images/Goldfinger/table.jpg", true, "images/Goldfinger/logosquare.png", "Goldfinger Factory", "6 month internship at Goldfinger Factory, an upcycling furniture studio and social enterprise.", ["Sustainable Design",  "Circular Economy" , "Enterpise", "Fabrication"], true),
+            new WorkObject("Rehapp.html","images/Rehapp/cover.jpg", false, "", "Rehapp", "Transforming rehabilitation in the home.", ["Medical",  "Gamification" ,"Coding", "Arduino", "Python", "UI"], true),
+            new WorkObject("Robotics.html", "images/Robotics/cover.jpg", false, "", "Feeding Robot", "Autonomously feeding robot.", ["Coding","Python",  "ROS" , "Computer Vision", "Robotics"], true),
+            new WorkObject("SIOT.html", "images/SIOT/windiow.png", false, "", "Windiow", "Sensing and IOT to prevent damp and mould at home.", ["Coding","IOT",  "UI" ,  "Arduino" , "Full Stack"], true),
+            new WorkObject("Vitarun.html", "images/Vitarun/1x/logoAsset 2.png", false, "", "VitaRun", "Smart insoles and machine learning to prevent running injury. ", ["Coding","Full Stack",  "Machine Learning" , "UI", "Medical" ], true),
+            new WorkObject("FireBowl.html", "images/Fire Bowl/firebowl.jpg", false, "", "FireBowl", "Flat pack fire bowl for responsible camping. ", ["Product Design",  "Fabrication"], true),
+            new WorkObject("morphLab.html", "images/morphLab/heroalt.jpg", false, "", "Cardiac Sensor", "Bio-compatible elastic strain sensor for measuring cardiac contractions in vivo", ["Robotics", "Medical", "Research", "Engineering", "Analysis"], true)
         ];
-
-        // workList.push(solo);
-        // workList.push(rehapp);
 
         ReactDOM.render(<App workList ={workList} />, document.querySelector("#root"));
         /*ReactDOM.render(
