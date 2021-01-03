@@ -3,16 +3,15 @@
 }
 
 body {
-    font-family: proxima-nova, Arial;
+    font-family: proxima-nova, sans-serif;
     font-style: normal;
+    
+    
    
    
 }
     body h1 {
         font-weight: 600;
-    }
-    body h2 {
-       
     }
     body h3 {
         font-weight: 600;
@@ -38,7 +37,7 @@ body {
 #dynamicHeader {
     height: 25px;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 100;
     text-transform: lowercase;
     
     white-space: nowrap;
